@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>[TÍTULO DE NOTA] · Rosario a la mesa</title>
+  <meta name="description" content="[BAJADA]">
+  <link rel="icon" href="../img/favicon.png">
+  <!-- Tipografías: Anton (títulos, definida por el equipo) y Archivo (texto, propuesta) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/main.js"></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<p class="aviso-v0">Versión de prueba (V0). Los textos entre [CORCHETES] son espacios a completar con contenido real del medio.</p>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="marca" href="../index.html">
+      <img src="../img/logo.png" alt="" width="92" height="92">
+      <span class="marca__texto">
+        <span class="marca__nombre">Rosario a la mesa</span>
+        <span class="marca__lema">Gastronomía rosarina: dónde comer y qué hay detrás de cada lugar</span>
+      </span>
+    </a>
+    <div class="cabecera__lateral">
+      <time data-fecha-hoy></time>
+      <div class="redes">
+        <!-- PENDIENTE: reemplazar # por el enlace real del canal y la cuenta -->
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+  </div>
+  <nav class="nav" id="menu-principal" aria-label="Navegación principal">
+    <div class="contenedor">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../secciones/recomendaciones.html" aria-current="page">Recomendaciones</a></li>
+        <li><a href="../secciones/entrevistas-y-debates.html">Entrevistas y debates</a></li>
+        <li><a href="../secciones/juegos.html">Juegos</a></li>
+        <li><a href="../quienes-somos.html">Quiénes somos</a></li>
+      </ul>
+      <div class="nav__redes redes"><a href="#">YouTube</a><a href="#">Instagram</a></div>
+    </div>
+  </nav>
+</header>
+
+<!--
+  PLANTILLA DE NOTA
+  Para publicar una nota nueva: duplicá este archivo dentro de /notas/,
+  renombralo (ej.: notas/cafe-de-barrio.html) y reemplazá cada [CORCHETE].
+  Si la nota no es de Recomendaciones, cambiá la sección en las migas,
+  en el kicker y en el aria-current del menú, y borrá la "Ficha del lugar".
+-->
+<main id="contenido">
+  <div class="contenedor">
+    <nav class="migas" aria-label="Ubicación">
+      <ol>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../secciones/recomendaciones.html">Recomendaciones</a></li>
+        <li aria-current="page">[TÍTULO CORTO]</li>
+      </ol>
+    </nav>
+
+    <article class="nota">
+      <header class="nota__cabeza">
+        <p class="kicker"><a href="../secciones/recomendaciones.html">Recomendaciones</a><span class="formato">Nota</span></p>
+        <h1 class="nota__titulo">[TÍTULO DE NOTA]</h1>
+        <p class="nota__bajada">[BAJADA: una o dos oraciones que amplían el título y anticipan lo que se va a leer]</p>
+        <p class="meta firma">
+          <span>Por <strong>[AUTOR/A]</strong></span>
+          <span><time datetime="2026-01-01">[FECHA DE PUBLICACIÓN]</time></span>
+          <span>[TIEMPO DE LECTURA] de lectura</span>
+        </p>
+      </header>
+
+      <figure class="nota__foto">
+        <!-- Reemplazar por: <img class="foto" src="../img/nombre-de-la-foto.jpg" alt="[DESCRIPCIÓN DE LA IMAGEN]"> -->
+        <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN PRINCIPAL]</div>
+        <figcaption>[EPÍGRAFE DE LA FOTO] · Foto: [CRÉDITO]</figcaption>
+      </figure>
+
+      <div class="nota__cuerpo-wrap">
+        <div class="nota__cuerpo">
+          <p>[PÁRRAFO DE APERTURA: el dato o la escena que abre la nota.]</p>
+          <p>[CUERPO DE NOTA: desarrollo. Copiar y pegar un &lt;p&gt; por cada párrafo.]</p>
+
+          <h2>[INTERTÍTULO]</h2>
+          <p>[CUERPO DE NOTA]</p>
+
+          <blockquote>
+            <p>[CITA TEXTUAL DE UNA FUENTE]</p>
+            <cite>[NOMBRE DE LA FUENTE], [CARGO O VÍNCULO CON EL LUGAR]</cite>
+          </blockquote>
+
+          <h2>[INTERTÍTULO]</h2>
+          <p>[CUERPO DE NOTA. Los enlaces se escriben así: <a href="#">[TEXTO DEL ENLACE]</a>.]</p>
+
+          <section class="fuentes" aria-labelledby="t-fuentes">
+            <h2 id="t-fuentes">Fuentes y enlaces</h2>
+            <ul>
+              <li>[FUENTE O ENTREVISTA CONSULTADA]</li>
+              <li><a href="#">[ENLACE A DOCUMENTO, PERFIL O SITIO CONSULTADO]</a></li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- PROPUESTA para notas de Recomendaciones: ficha con los datos prácticos del lugar -->
+        <aside class="ficha" aria-labelledby="t-ficha">
+          <h2 id="t-ficha">Ficha del lugar</h2>
+          <dl>
+            <div><dt>Lugar</dt><dd>[NOMBRE DEL LUGAR]</dd></div>
+            <div><dt>Tipo</dt><dd>[RESTAURANTE / BAR / CAFETERÍA]</dd></div>
+            <div><dt>Dirección</dt><dd>[CALLE Y NÚMERO]</dd></div>
+            <div><dt>Barrio</dt><dd>[BARRIO]</dd></div>
+            <div><dt>Horarios</dt><dd>[DÍAS Y HORARIOS]</dd></div>
+            <div><dt>Precio de referencia</dt><dd>[RANGO DE PRECIOS Y FECHA DEL RELEVAMIENTO]</dd></div>
+            <div><dt>Redes</dt><dd>[@CUENTA DEL LUGAR]</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </article>
+  </div>
+
+  <section class="contenedor bloque" aria-labelledby="t-rel">
+    <div class="bloque__cabeza">
+      <h2 class="bloque__titulo" id="t-rel">Seguí leyendo</h2>
+    </div>
+    <div class="grilla-3">
+        <article class="tarjeta">
+          <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN]</div>
+          <p class="kicker"><a href="../secciones/recomendaciones.html">Recomendaciones</a><span class="formato">Reseña</span></p>
+          <h3 class="tarjeta__titulo"><a href="../notas/plantilla-nota.html">[TÍTULO DE NOTA]</a></h3>
+          <p class="tarjeta__bajada">[BAJADA: una o dos oraciones que amplían el título]</p>
+          <p class="meta">Por <strong>[AUTOR/A]</strong> · <time>[FECHA]</time></p>
+        </article>
+        <article class="tarjeta">
+          <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN]</div>
+          <p class="kicker"><a href="../secciones/entrevistas-y-debates.html">Entrevistas y debates</a><span class="formato">Entrevista</span></p>
+          <h3 class="tarjeta__titulo"><a href="../notas/plantilla-nota.html">[TÍTULO DE NOTA]</a></h3>
+          <p class="tarjeta__bajada">[BAJADA: una o dos oraciones que amplían el título]</p>
+          <p class="meta">Por <strong>[AUTOR/A]</strong> · <time>[FECHA]</time></p>
+        </article>
+        <article class="tarjeta">
+          <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN]</div>
+          <p class="kicker"><a href="../secciones/recomendaciones.html">Recomendaciones</a><span class="formato formato--vertical">Vertical</span></p>
+          <h3 class="tarjeta__titulo"><a href="../notas/plantilla-nota.html">[TÍTULO DE NOTA]</a></h3>
+          <p class="tarjeta__bajada">[BAJADA: una o dos oraciones que amplían el título]</p>
+          <p class="meta">Por <strong>[AUTOR/A]</strong> · <time>[FECHA]</time></p>
+        </article>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__grilla">
+    <div>
+      <p class="pie__nombre">Rosario a la mesa</p>
+      <p>Un programa de comunicación dedicado a la gastronomía de Rosario. Recorremos restaurantes, cafeterías y espacios gastronómicos de la ciudad para conocer sus propuestas, sus historias y sus protagonistas.</p>
+    </div>
+    <div>
+      <h2>Secciones</h2>
+      <ul>
+        <li><a href="../secciones/recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="../secciones/entrevistas-y-debates.html">Entrevistas y debates</a></li>
+        <li><a href="../secciones/juegos.html">Juegos</a></li>
+        <li><a href="../quienes-somos.html">Quiénes somos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Seguinos</h2>
+      <ul>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li>Contacto: [EMAIL DE CONTACTO]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    Rosario a la mesa · [MATERIA / CÁTEDRA] · [UNIVERSIDAD] · 2026
+  </div>
+</footer>
+</body>
+</html>

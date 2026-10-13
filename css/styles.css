@@ -1,0 +1,490 @@
+/* =========================================================
+   ROSARIO A LA MESA — Hoja de estilos única del sitio
+   Identidad: rojos y cremas, Anton para títulos, simple y cálido.
+   Para cambiar colores o tipografías, editá solo el bloque :root.
+   ========================================================= */
+
+:root {
+  /* Colores de la identidad (tomados del logo) */
+  --crema: #F2EEE6;        /* fondo general, igual al fondo del logo */
+  --crema-oscura: #E8E0D1; /* superficies y placeholders de imagen */
+  --rojo: #880000;         /* rojo de marca */
+  --rojo-hover: #A51313;
+  --tinta: #2A1A17;        /* texto principal (casi negro cálido) */
+  --tinta-suave: #5C4842;  /* bajadas, fechas, datos secundarios */
+  --linea: #D6CAB6;        /* separadores */
+
+  /* Tipografías */
+  --fuente-titulos: "Anton", "Impact", "Arial Narrow Bold", sans-serif;
+  --fuente-texto: "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+  /* Medidas */
+  --ancho-max: 1180px;
+  --ancho-lectura: 68ch;
+  --margen: clamp(16px, 4vw, 32px);
+
+  color-scheme: light;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: var(--fuente-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--rojo); text-underline-offset: 3px; }
+a:hover { color: var(--rojo-hover); }
+
+/* Foco visible para navegar con teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--rojo);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 400;          /* Anton ya es gruesa por sí misma */
+  line-height: 1.08;
+  letter-spacing: 0.005em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: var(--margen);
+}
+
+.saltar {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--rojo); color: var(--crema);
+  padding: .6rem 1rem; z-index: 100;
+}
+.saltar:focus { left: 8px; top: 8px; }
+
+/* ---------- Aviso de versión de prueba ---------- */
+.aviso-v0 {
+  background: var(--tinta);
+  color: var(--crema);
+  font-size: .8125rem;
+  text-align: center;
+  padding: .4rem var(--margen);
+}
+
+/* ---------- Encabezado ---------- */
+.cabecera {
+  border-bottom: 3px solid var(--rojo);
+  background: var(--crema);
+}
+
+.cabecera__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: .75rem;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+.marca img { width: 92px; height: 92px; object-fit: contain; flex-shrink: 0; }
+
+.marca__texto { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
+.marca__nombre {
+  font-family: var(--fuente-titulos);
+  color: var(--rojo);
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.marca__lema { color: var(--tinta-suave); font-size: .9375rem; line-height: 1.35; }
+
+.cabecera__lateral {
+  display: flex; flex-direction: column; align-items: flex-end; gap: .35rem;
+  font-size: .875rem; color: var(--tinta-suave);
+}
+.redes { display: flex; gap: .9rem; }
+.redes a { font-weight: 600; text-decoration: none; }
+.redes a:hover { text-decoration: underline; }
+
+/* Botón de menú (solo celular) */
+.boton-menu {
+  display: none;
+  background: var(--rojo);
+  color: var(--crema);
+  border: 0;
+  font: 600 .9375rem/1 var(--fuente-texto);
+  padding: .7rem .9rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Navegación principal */
+.nav { border-top: 1px solid var(--linea); }
+.nav ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 0 1.75rem;
+}
+.nav a {
+  display: inline-block;
+  padding: .7rem 0;
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+.nav a:hover { color: var(--rojo); }
+.nav a[aria-current="page"] { color: var(--rojo); border-bottom-color: var(--rojo); }
+
+/* ---------- Etiquetas: sección, formato, tipo de agenda ---------- */
+.kicker {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+  font-size: .75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--rojo);
+}
+.kicker a { text-decoration: none; }
+.kicker a:hover { text-decoration: underline; }
+
+.formato {
+  display: inline-block;
+  padding: .15rem .45rem;
+  border: 1.5px solid var(--rojo);
+  border-radius: 3px;
+  color: var(--rojo);
+  line-height: 1.2;
+}
+/* Formatos audiovisuales: relleno sólido para distinguirlos a simple vista */
+.formato--podcast,
+.formato--video,
+.formato--vertical { background: var(--rojo); color: var(--crema); }
+
+/* Diferencia agenda propia / actualidad */
+.agenda { color: var(--tinta-suave); }
+.agenda--actualidad::before { content: "● "; color: var(--rojo); }
+
+.meta { font-size: .875rem; color: var(--tinta-suave); font-variant-numeric: tabular-nums; }
+.meta strong { color: var(--tinta); font-weight: 600; }
+
+/* ---------- Placeholder de imagen ---------- */
+.img-ph {
+  display: grid; place-items: center;
+  aspect-ratio: 3 / 2;
+  max-width: 100%;
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(136,0,0,.06) 14px 15px),
+    var(--crema-oscura);
+  color: var(--tinta-suave);
+  font-size: .8125rem; font-weight: 700; letter-spacing: .08em;
+  text-align: center; padding: 1rem;
+}
+.img-ph--video { aspect-ratio: 16 / 9; }
+.img-ph--vertical { aspect-ratio: 9 / 16; }
+.img-ph--retrato { aspect-ratio: 1 / 1; border-radius: 50%; }
+
+/* Cuando haya fotos reales: <img class="foto" ...> ocupa el mismo lugar */
+.foto { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+
+/* ---------- Tarjetas de nota ---------- */
+.tarjeta { position: relative; display: flex; flex-direction: column; gap: .6rem; min-width: 0; }
+.tarjeta__titulo { font-size: 1.45rem; }
+.tarjeta__titulo a { color: var(--tinta); text-decoration: none; }
+/* Toda la tarjeta es clickeable, pero el enlace real es el título */
+.tarjeta__titulo a::after { content: ""; position: absolute; inset: 0; }
+.tarjeta:hover .tarjeta__titulo a { color: var(--rojo); }
+.tarjeta__bajada { color: var(--tinta-suave); font-size: .9875rem; line-height: 1.5; }
+.tarjeta .kicker a { position: relative; z-index: 1; }
+
+/* ---------- Encabezados de bloque ---------- */
+.bloque { padding-block: 2.5rem; }
+.bloque + .bloque { border-top: 1px solid var(--linea); }
+
+.bloque__cabeza {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--tinta);
+  padding-bottom: .4rem;
+}
+.bloque__titulo { font-size: 1.75rem; text-transform: uppercase; }
+.bloque__mas { font-weight: 600; font-size: .9375rem; }
+
+/* ---------- PORTADA: nota principal ---------- */
+.principal {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  padding-block: 2rem 2.5rem;
+}
+.principal .img-ph,
+.principal .foto { aspect-ratio: 4 / 3; }
+.principal__texto { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.principal__titulo { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--tinta); }
+.principal__titulo a { color: inherit; text-decoration: none; }
+.principal__titulo a::after { content: ""; position: absolute; inset: 0; }
+.principal:hover .principal__titulo a { color: var(--rojo); }
+.principal__bajada { font-size: 1.15rem; line-height: 1.5; color: var(--tinta-suave); }
+
+/* Grillas */
+.grilla-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.grilla-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+
+/* Portada: últimas + secciones lado a lado */
+.portada-dos {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+}
+
+/* Lista de últimas publicaciones */
+.ultimas { list-style: none; margin: 0; padding: 0; }
+.ultimas li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: .9rem;
+  border-bottom: 1px solid var(--linea);
+}
+.ultimas time { font-size: .8125rem; color: var(--tinta-suave); font-variant-numeric: tabular-nums; padding-top: .2rem; }
+.ultimas__cuerpo { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+.ultimas a.ultimas__titulo { color: var(--tinta); text-decoration: none; font-weight: 700; font-size: 1.05rem; line-height: 1.35; }
+.ultimas a.ultimas__titulo:hover { color: var(--rojo); text-decoration: underline; }
+
+/* Acceso a secciones */
+.secciones-lista { display: flex; flex-direction: column; gap: 1rem; }
+.seccion-acceso {
+  display: block;
+  padding: 1.1rem 1.25rem;
+  background: var(--crema-oscura);
+  border-left: 6px solid var(--rojo);
+  color: var(--tinta);
+  text-decoration: none;
+}
+.seccion-acceso:hover { background: #E1D7C4; color: var(--tinta); }
+.seccion-acceso h3 { font-size: 1.5rem; text-transform: uppercase; color: var(--rojo); margin-bottom: .25rem; }
+.seccion-acceso p { font-size: .9375rem; color: var(--tinta-suave); line-height: 1.45; }
+
+/* ---------- Banda audiovisual (podcast / video / verticales) ---------- */
+.banda-av { background: var(--rojo); color: var(--crema); }
+.banda-av .bloque__cabeza { border-bottom-color: var(--crema); }
+.banda-av a { color: var(--crema); }
+.banda-av .kicker { color: var(--crema); }
+.banda-av .formato { border-color: var(--crema); background: var(--crema); color: var(--rojo); }
+.banda-av .meta { color: #F0D9D2; }
+.banda-av .img-ph {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(242,238,230,.08) 14px 15px),
+    #6E0000;
+  color: #F0D9D2;
+}
+.av-grilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+.av-destacado { display: flex; flex-direction: column; gap: .8rem; }
+.av-destacado h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.av-verticales { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.av-verticales figure { margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+.av-verticales figcaption { font-size: .8125rem; line-height: 1.35; }
+.av-lateral { display: flex; flex-direction: column; gap: 1rem; }
+.av-lateral h3 { font-size: 1.3rem; text-transform: uppercase; }
+.boton {
+  display: inline-block;
+  padding: .65rem 1rem;
+  font-weight: 700; font-size: .9375rem;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+}
+.banda-av .boton:hover { background: var(--crema); color: var(--rojo); }
+.botonera { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* Bloque de propuesta editorial en portada */
+.promesa {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 2rem;
+  align-items: center;
+}
+.promesa img { width: 180px; justify-self: center; }
+.promesa p { font-size: 1.2rem; line-height: 1.55; max-width: 60ch; }
+.promesa p + p { margin-top: .8rem; font-size: 1rem; }
+
+/* ---------- Páginas de sección ---------- */
+.cabeza-seccion { padding-block: 2.25rem 1.5rem; border-bottom: 3px solid var(--tinta); }
+.cabeza-seccion h1 { font-size: clamp(2rem, 9vw, 4.5rem); overflow-wrap: anywhere; color: var(--rojo); text-transform: uppercase; }
+.cabeza-seccion p { margin-top: .6rem; max-width: 62ch; color: var(--tinta-suave); font-size: 1.1rem; }
+
+.filtros { display: flex; flex-wrap: wrap; gap: .5rem; padding-top: 1.5rem; }
+.filtros button {
+  font: 600 .875rem/1 var(--fuente-texto);
+  padding: .55rem .9rem;
+  border: 1.5px solid var(--rojo);
+  background: transparent; color: var(--rojo);
+  border-radius: 999px; cursor: pointer;
+}
+.filtros button[aria-pressed="true"] { background: var(--rojo); color: var(--crema); }
+.filtros__vacio { padding-block: 1rem; color: var(--tinta-suave); }
+
+/* ---------- Página de nota ---------- */
+.migas { font-size: .875rem; padding-top: 1.5rem; color: var(--tinta-suave); }
+.migas ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.migas li + li::before { content: "›"; margin-right: .4rem; }
+
+.nota { padding-bottom: 3rem; }
+.nota__cabeza { max-width: 52rem; padding-block: 1.25rem 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
+.nota__titulo { font-size: clamp(2.2rem, 5.5vw, 3.75rem); }
+.nota__bajada { font-size: 1.25rem; line-height: 1.5; color: var(--tinta-suave); }
+.firma {
+  display: flex; flex-wrap: wrap; gap: .25rem 1.25rem;
+  padding-top: .9rem; border-top: 1px solid var(--linea);
+}
+
+.nota__foto { margin: 0 0 2rem; max-width: 60rem; }
+.nota__foto .img-ph, .nota__foto .foto { aspect-ratio: 16 / 9; }
+.nota__foto figcaption { font-size: .8125rem; color: var(--tinta-suave); padding-top: .5rem; }
+
+.nota__cuerpo-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, var(--ancho-lectura)) minmax(0, 18rem);
+  gap: 3rem;
+  align-items: start;
+}
+.nota__cuerpo { font-size: 1.125rem; line-height: 1.72; min-width: 0; }
+.nota__cuerpo > * + * { margin-top: 1.15rem; }
+.nota__cuerpo h2 { font-size: 1.85rem; margin-top: 2.2rem; color: var(--rojo); }
+.nota__cuerpo blockquote {
+  margin: 2rem 0; padding: .25rem 0 .25rem 1.25rem;
+  border-left: 5px solid var(--rojo);
+  font-size: 1.3rem; line-height: 1.45; font-weight: 600;
+}
+.nota__cuerpo blockquote cite { display: block; margin-top: .5rem; font-size: .9rem; font-weight: 400; font-style: normal; color: var(--tinta-suave); }
+
+/* Ficha del lugar (recomendaciones) */
+.ficha {
+  background: var(--crema-oscura);
+  border-top: 5px solid var(--rojo);
+  padding: 1.25rem;
+  position: sticky; top: 1rem;
+}
+.ficha h2 { font-size: 1.35rem; text-transform: uppercase; color: var(--rojo); margin-bottom: .75rem; }
+.ficha dl { margin: 0; display: grid; gap: .6rem; }
+.ficha dt { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--tinta-suave); }
+.ficha dd { margin: 0; font-size: .9875rem; }
+
+.fuentes { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 3px solid var(--tinta); }
+.fuentes h2 { font-size: 1.35rem; text-transform: uppercase; margin-bottom: .6rem; color: var(--tinta); }
+.fuentes ul { margin: 0; padding-left: 1.2rem; font-size: 1rem; }
+
+/* ---------- Quiénes somos ---------- */
+.texto-institucional { max-width: var(--ancho-lectura); display: flex; flex-direction: column; gap: 1rem; font-size: 1.125rem; }
+.texto-institucional h2 { font-size: 1.85rem; color: var(--rojo); text-transform: uppercase; margin-top: 1.25rem; }
+.equipo { list-style: none; margin: 0; padding: 0; }
+.equipo li { display: flex; flex-direction: column; gap: .5rem; text-align: center; align-items: center; }
+.equipo .img-ph--retrato { width: 100%; max-width: 160px; }
+.equipo strong { font-size: 1.05rem; }
+.equipo span { font-size: .875rem; color: var(--tinta-suave); }
+
+/* ---------- Pie ---------- */
+.pie { background: var(--tinta); color: var(--crema); margin-top: 2rem; }
+.pie a { color: var(--crema); }
+.pie__grilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  padding-block: 2.5rem 1.5rem;
+}
+.pie__nombre { font-family: var(--fuente-titulos); font-size: 2rem; text-transform: uppercase; color: var(--crema); line-height: 1; }
+.pie p { font-size: .9375rem; color: #D9CFC0; line-height: 1.55; margin-top: .6rem; max-width: 46ch; }
+.pie h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .6rem; }
+.pie ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .35rem; font-size: .9375rem; }
+.pie__legal { border-top: 1px solid #4A3631; padding-block: 1rem; font-size: .8125rem; color: #BFB2A2; }
+
+/* =========================================================
+   VERSIÓN CELULAR Y TABLET
+   ========================================================= */
+@media (max-width: 960px) {
+  .grilla-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portada-dos { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .av-grilla { grid-template-columns: minmax(0, 1fr); }
+  .nota__cuerpo-wrap { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .ficha { position: static; }
+}
+
+@media (max-width: 760px) {
+  body { font-size: 1rem; }
+  .cabecera__fila { padding-block: .6rem; }
+  .marca img { width: 60px; height: 60px; }
+  .marca { gap: .7rem; }
+  .marca__lema { display: none; }
+  .cabecera__lateral { display: none; }
+  .boton-menu { display: inline-block; }
+
+  /* El menú se oculta solo si hay JavaScript (si no, queda visible) */
+  .js .nav { display: none; }
+  .js .nav.abierto { display: block; }
+  .nav ul { flex-direction: column; gap: 0; }
+  .nav li { border-bottom: 1px solid var(--linea); }
+  .nav a { display: block; padding: .85rem 0; border-bottom: 0; }
+  .nav a[aria-current="page"] { border-left: 5px solid var(--rojo); padding-left: .6rem; }
+  .nav__redes { display: flex; gap: 1.25rem; padding: .85rem 0; }
+
+  .principal { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; padding-top: 1.25rem; }
+  .grilla-3 { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .promesa { grid-template-columns: minmax(0, 1fr); text-align: left; }
+  .promesa img { width: 120px; justify-self: start; }
+  .pie__grilla { grid-template-columns: minmax(0, 1fr); }
+  .ultimas li { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+  .nota__cuerpo { font-size: 1.0625rem; }
+}
+
+@media (min-width: 761px) {
+  .nav__redes { display: none; }
+}
+
+@media (max-width: 420px) {
+  .grilla-4 { grid-template-columns: minmax(0, 1fr); }
+  .av-verticales { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Elementos ocultos por JavaScript (filtros) */
+[hidden] { display: none !important; }
+
+/* Texto solo para lectores de pantalla */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}

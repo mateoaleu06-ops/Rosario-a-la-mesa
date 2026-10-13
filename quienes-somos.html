@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quiénes somos · Rosario a la mesa</title>
+  <meta name="description" content="Qué es Rosario a la mesa, su propuesta editorial y quiénes integran la redacción.">
+  <link rel="icon" href="img/favicon.png">
+  <!-- Tipografías: Anton (títulos, definida por el equipo) y Archivo (texto, propuesta) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<p class="aviso-v0">Versión de prueba (V0). Los textos entre [CORCHETES] son espacios a completar con contenido real del medio.</p>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="marca" href="index.html">
+      <img src="img/logo.png" alt="" width="92" height="92">
+      <span class="marca__texto">
+        <span class="marca__nombre">Rosario a la mesa</span>
+        <span class="marca__lema">Gastronomía rosarina: dónde comer y qué hay detrás de cada lugar</span>
+      </span>
+    </a>
+    <div class="cabecera__lateral">
+      <time data-fecha-hoy></time>
+      <div class="redes">
+        <!-- PENDIENTE: reemplazar # por el enlace real del canal y la cuenta -->
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+  </div>
+  <nav class="nav" id="menu-principal" aria-label="Navegación principal">
+    <div class="contenedor">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="secciones/recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="secciones/entrevistas-y-debates.html">Entrevistas y debates</a></li>
+        <li><a href="secciones/juegos.html">Juegos</a></li>
+        <li><a href="quienes-somos.html" aria-current="page">Quiénes somos</a></li>
+      </ul>
+      <div class="nav__redes redes"><a href="#">YouTube</a><a href="#">Instagram</a></div>
+    </div>
+  </nav>
+</header>
+
+<main id="contenido">
+  <div class="contenedor">
+    <header class="cabeza-seccion">
+      <h1>Quiénes somos</h1>
+      <p>Un medio dedicado a la gastronomía de Rosario.</p>
+    </header>
+
+    <section class="bloque texto-institucional">
+      <h2>Qué es Rosario a la mesa</h2>
+      <p>Rosario a la mesa es un programa de comunicación dedicado a la gastronomía de Rosario. Recorremos restaurantes, cafeterías y distintos espacios gastronómicos de la ciudad para conocer sus propuestas, sus historias y sus protagonistas, y ofrecer recomendaciones de dónde comer.</p>
+
+      <h2>Nuestra propuesta</h2>
+      <p>Abordamos la gastronomía desde una mirada cercana, dinámica y periodística, combinando recomendaciones con historias, experiencias y contenidos sobre los lugares y las personas que forman parte de la escena gastronómica rosarina.</p>
+      <p>Queremos ir más allá de una simple recomendación: descubrir qué tiene para ofrecer la gastronomía de la ciudad y contar qué hay detrás de cada lugar, para que encuentres nuevos espacios y elijas dónde comer.</p>
+
+      <h2>Dónde encontrarnos</h2>
+      <p>Además de esta web, publicamos podcast, videos y verticales en <a href="#">YouTube</a> e <a href="#">Instagram</a>.</p>
+    </section>
+
+    <section class="bloque" aria-labelledby="t-equipo">
+      <div class="bloque__cabeza">
+        <h2 class="bloque__titulo" id="t-equipo">La redacción</h2>
+      </div>
+      <ul class="equipo grilla-4">
+        <li>
+          <div class="img-ph img-ph--retrato" role="img" aria-label="Foto pendiente">[FOTO]</div>
+          <strong>[NOMBRE Y APELLIDO]</strong>
+          <span>[ROL EN LA REDACCIÓN]</span>
+        </li>
+        <li>
+          <div class="img-ph img-ph--retrato" role="img" aria-label="Foto pendiente">[FOTO]</div>
+          <strong>[NOMBRE Y APELLIDO]</strong>
+          <span>[ROL EN LA REDACCIÓN]</span>
+        </li>
+        <li>
+          <div class="img-ph img-ph--retrato" role="img" aria-label="Foto pendiente">[FOTO]</div>
+          <strong>[NOMBRE Y APELLIDO]</strong>
+          <span>[ROL EN LA REDACCIÓN]</span>
+        </li>
+        <li>
+          <div class="img-ph img-ph--retrato" role="img" aria-label="Foto pendiente">[FOTO]</div>
+          <strong>[NOMBRE Y APELLIDO]</strong>
+          <span>[ROL EN LA REDACCIÓN]</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__grilla">
+    <div>
+      <p class="pie__nombre">Rosario a la mesa</p>
+      <p>Un programa de comunicación dedicado a la gastronomía de Rosario. Recorremos restaurantes, cafeterías y espacios gastronómicos de la ciudad para conocer sus propuestas, sus historias y sus protagonistas.</p>
+    </div>
+    <div>
+      <h2>Secciones</h2>
+      <ul>
+        <li><a href="secciones/recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="secciones/entrevistas-y-debates.html">Entrevistas y debates</a></li>
+        <li><a href="secciones/juegos.html">Juegos</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Seguinos</h2>
+      <ul>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li>Contacto: [EMAIL DE CONTACTO]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    Rosario a la mesa · [MATERIA / CÁTEDRA] · [UNIVERSIDAD] · 2026
+  </div>
+</footer>
+</body>
+</html>
