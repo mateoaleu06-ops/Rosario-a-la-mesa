@@ -537,3 +537,6 @@ p { margin: 0; }
 span.ultimas__titulo { font-weight: 700; font-size: 1.05rem; }
 .banda-av .img-ph.vertical, .av-vertical .img-ph { aspect-ratio: 9 / 16; }
 .av-vertical { color: var(--crema); }
+
+/* Bajadas largas en tarjetas: máximo 3 líneas */
+.tarjeta__bajada { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
