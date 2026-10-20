@@ -34,26 +34,27 @@ nav: inicio
 </div>
 {% endif %}
 
-{% if resto.size > 0 %}
+{% if resto.size > 0 or site.modo_prueba %}
 <section class="contenedor bloque" aria-labelledby="t-destacadas">
   <div class="bloque__cabeza">
     <h2 class="bloque__titulo" id="t-destacadas">También en la mesa</h2>
   </div>
   <div class="grilla-3">
     {% for n in resto limit: 3 %}{% include tarjeta.html nota=n %}{% endfor %}
+    {% if site.modo_prueba %}{% assign faltan = 3 | minus: resto.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}{% include tarjeta-ejemplo.html seccion="entrevistas" formato="Entrevista" %}{% endfor %}{% endif %}{% endif %}
   </div>
 </section>
 {% endif %}
 
-{% if con_video.size > 0 or verticales.size > 0 %}
+{% if con_video.size > 0 or verticales.size > 0 or site.modo_prueba %}
 {%- assign av = con_video.first -%}
 <section class="banda-av" aria-labelledby="t-av">
   <div class="contenedor bloque">
     <div class="bloque__cabeza">
       <h2 class="bloque__titulo" id="t-av">Mirá y escuchá</h2>
-      {% if site.youtube != "" %}<a class="bloque__mas" href="{{ site.youtube }}">Canal de YouTube →</a>{% endif %}
+      {% if site.youtube != "" %}<a class="bloque__mas" href="{{ site.youtube }}">Canal de YouTube →</a>{% elsif site.modo_prueba %}<a class="bloque__mas" href="#">Canal de YouTube →</a>{% endif %}
     </div>
-    <div class="av-grilla{% if av == nil or verticales.size == 0 %} av-grilla--una{% endif %}">
+    <div class="av-grilla{% unless site.modo_prueba %}{% if av == nil or verticales.size == 0 %} av-grilla--una{% endif %}{% endunless %}">
       {% if av %}
       <article class="av-destacado">
         {% include video.html enlace=av.youtube titulo=av.titulo %}
@@ -62,8 +63,16 @@ nav: inicio
         {% if av.bajada %}<p>{{ av.bajada }}</p>{% endif %}
         <p class="meta">{% include fecha.html fecha=av.fecha %}</p>
       </article>
+      {% elsif site.modo_prueba %}
+      <article class="av-destacado">
+        <div class="img-ph img-ph--video" aria-hidden="true">[VIDEO O EPISODIO DESTACADO]</div>
+        <p class="kicker"><span class="formato">Podcast</span><span class="formato">Video</span></p>
+        <h3>[TÍTULO DEL EPISODIO]</h3>
+        <p>[DESCRIPCIÓN BREVE DEL EPISODIO: lugar, invitados/as, tema]</p>
+        <p class="meta">[DURACIÓN] · [FECHA]</p>
+      </article>
       {% endif %}
-      {% if verticales.size > 0 %}
+      {% if verticales.size > 0 or site.modo_prueba %}
       <div class="av-lateral">
         <h3>Verticales</h3>
         <div class="av-verticales">
@@ -73,8 +82,11 @@ nav: inicio
             <span>{{ v.titulo }}</span>
           </a>
           {% endfor %}
+          {% if site.modo_prueba %}{% assign faltan = 3 | minus: verticales.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}
+          <div class="av-vertical"><div class="img-ph vertical" aria-hidden="true">[VERTICAL]</div><span>[TÍTULO DEL VERTICAL]</span></div>
+          {% endfor %}{% endif %}{% endif %}
         </div>
-        {% if site.instagram != "" %}<a class="boton" href="{{ site.instagram }}">Ver más en Instagram</a>{% endif %}
+        {% if site.instagram != "" %}<a class="boton" href="{{ site.instagram }}">Ver más en Instagram</a>{% elsif site.modo_prueba %}<a class="boton" href="#">Ver más en Instagram</a>{% endif %}
       </div>
       {% endif %}
     </div>
@@ -87,7 +99,7 @@ nav: inicio
     <div class="bloque__cabeza">
       <h2 class="bloque__titulo" id="t-ultimas">Últimas publicaciones</h2>
     </div>
-    {% if notas.size > 0 %}
+    {% if notas.size > 0 or site.modo_prueba %}
     <ol class="ultimas">
       {% for n in notas limit: 8 %}
       <li>
@@ -98,6 +110,15 @@ nav: inicio
         </div>
       </li>
       {% endfor %}
+      {% if site.modo_prueba %}{% assign faltan = 6 | minus: notas.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}
+      <li>
+        <time>[FECHA]</time>
+        <div class="ultimas__cuerpo">
+          <p class="kicker"><span class="formato">Nota</span></p>
+          <span class="ultimas__titulo">[TÍTULO DE NOTA]</span>
+        </div>
+      </li>
+      {% endfor %}{% endif %}{% endif %}
     </ol>
     {% else %}
     <p class="vacio">Todavía no hay publicaciones.</p>

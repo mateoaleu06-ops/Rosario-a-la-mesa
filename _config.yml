@@ -17,8 +17,11 @@ email: ""
 materia: ""
 universidad: ""
 
-# Franja negra de "versión de prueba" arriba de todo. Ponela en false cuando el sitio esté listo.
-aviso_prueba: true
+# MODO PRUEBA
+# true  = muestra la franja de "versión de prueba" y completa con [MARCADORES] los espacios
+#         que todavía no tienen contenido (notas, videos, verticales, redes).
+# false = ponelo cuando el sitio esté listo: los espacios vacíos se ocultan.
+modo_prueba: true
 
 # ---------------------------------------------------------
 #  CONFIGURACIÓN TÉCNICA — no hace falta tocar nada de acá para abajo

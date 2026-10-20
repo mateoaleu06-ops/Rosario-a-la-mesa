@@ -74,13 +74,14 @@ layout: base
   </article>
 </div>
 
-{% if relacionadas.size > 0 %}
+{% if relacionadas.size > 0 or site.modo_prueba %}
 <section class="contenedor bloque" aria-labelledby="t-rel">
   <div class="bloque__cabeza">
     <h2 class="bloque__titulo" id="t-rel">Seguí leyendo</h2>
   </div>
   <div class="grilla-3">
     {% for n in relacionadas limit: 3 %}{% include tarjeta.html nota=n %}{% endfor %}
+    {% if site.modo_prueba %}{% assign faltan = 3 | minus: relacionadas.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}{% include tarjeta-ejemplo.html seccion=page.seccion %}{% endfor %}{% endif %}{% endif %}
   </div>
 </section>
 {% endif %}

@@ -1,0 +1,9 @@
+{%- comment -%} Tarjeta con marcadores: solo se muestra en modo prueba, donde todavía no hay notas. {%- endcomment -%}
+{%- assign sec = site.data.secciones | where: "clave", include.seccion | first -%}
+<article class="tarjeta tarjeta--ejemplo">
+  <div class="img-ph" aria-hidden="true">[IMAGEN]</div>
+  <p class="kicker">{% if sec %}<a href="{{ sec.url | relative_url }}">{{ sec.nombre }}</a>{% endif %}<span class="formato formato--{{ include.formato | downcase }}">{{ include.formato | default: "Nota" }}</span></p>
+  <{{ include.nivel | default: "h3" }} class="tarjeta__titulo">[TÍTULO DE NOTA]</{{ include.nivel | default: "h3" }}>
+  <p class="tarjeta__bajada">[BAJADA: una o dos oraciones que amplían el título]</p>
+  <p class="meta">Por <strong>[AUTOR/A]</strong> · [FECHA]</p>
+</article>

@@ -495,7 +495,7 @@ p { margin: 0; }
 
 /* Nota sin foto: fondo crema con el logo */
 .sin-foto { background: var(--crema-oscura); }
-.sin-foto img { width: 30%; max-width: 140px; mix-blend-mode: multiply; }
+.sin-foto img { width: 30%; max-width: 140px; mix-blend-mode: darken; opacity: .8; }
 .banda-av .sin-foto { background: #6E0000; }
 .banda-av .sin-foto img { display: none; }
 
@@ -531,3 +531,9 @@ p { margin: 0; }
 /* Fotos de la redacción */
 .retrato { width: 100%; max-width: 160px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; }
 .equipo .img-ph--retrato { min-height: 0; }
+
+/* Marcadores del modo prueba */
+.tarjeta--ejemplo .tarjeta__titulo { color: var(--tinta); }
+span.ultimas__titulo { font-weight: 700; font-size: 1.05rem; }
+.banda-av .img-ph.vertical, .av-vertical .img-ph { aspect-ratio: 9 / 16; }
+.av-vertical { color: var(--crema); }
