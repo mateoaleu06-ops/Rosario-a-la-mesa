@@ -1,5 +1,11 @@
-{%- comment -%} Inserta un video de YouTube a partir del enlace completo (watch?v=, youtu.be/ o shorts/). {%- endcomment -%}
+{%- comment -%}
+  Video de YouTube a partir del enlace completo (watch?v=, youtu.be/ o shorts/).
+  Muestra la portada con un botón de play; el reproductor se carga al tocarlo (js/main.js).
+{%- endcomment -%}
 {%- assign yt = include.enlace | split: "v=" | last | split: "&" | first | split: "youtu.be/" | last | split: "shorts/" | last | split: "?" | first -%}
 <div class="video">
-  <iframe src="https://www.youtube-nocookie.com/embed/{{ yt }}" title="{{ include.titulo | escape }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <a class="video__portada" href="https://www.youtube.com/watch?v={{ yt }}" data-yt="{{ yt }}" data-titulo="{{ include.titulo | escape }}" style="background-image: url('https://i.ytimg.com/vi/{{ yt }}/hqdefault.jpg')">
+    <span class="video__play" aria-hidden="true"></span>
+    <span class="sr-only">Reproducir: {{ include.titulo }}</span>
+  </a>
 </div>

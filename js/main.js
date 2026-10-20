@@ -32,6 +32,20 @@ document.addEventListener('DOMContentLoaded', function () {
     fecha.setAttribute('datetime', hoy.toISOString().slice(0, 10));
   }
 
+  // Videos de YouTube: al tocar la portada se carga el reproductor
+  document.querySelectorAll('.video__portada').forEach(function (enlace) {
+    enlace.addEventListener('click', function (e) {
+      e.preventDefault();
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + enlace.getAttribute('data-yt') + '?autoplay=1&rel=0';
+      iframe.title = enlace.getAttribute('data-titulo') || 'Video de YouTube';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      enlace.parentNode.replaceChild(iframe, enlace);
+    });
+  });
+
   // 3. Filtros de la sección Recomendaciones
   //    Cada botón tiene data-filtro="cafeterias" (o "todas").
   //    Cada tarjeta tiene data-tipo="cafeterias".
