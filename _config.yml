@@ -21,7 +21,7 @@ universidad: "UCA Rosario"
 # true  = muestra la franja de "versión de prueba" y completa con [MARCADORES] los espacios
 #         que todavía no tienen contenido (notas, videos, verticales, redes).
 # false = ponelo cuando el sitio esté listo: los espacios vacíos se ocultan.
-modo_prueba: true
+modo_prueba: false
 
 # ---------------------------------------------------------
 #  CONFIGURACIÓN TÉCNICA — no hace falta tocar nada de acá para abajo

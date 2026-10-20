@@ -25,6 +25,7 @@
         {% for s in site.data.secciones %}
         <li><a href="{{ s.url | relative_url }}"{% if page.nav == s.clave %} aria-current="page"{% endif %}>{{ s.nombre }}</a></li>
         {% endfor %}
+        <li><a href="{{ '/videos/' | relative_url }}"{% if page.nav == "videos" %} aria-current="page"{% endif %}>Videos</a></li>
         <li><a href="{{ '/quienes-somos/' | relative_url }}"{% if page.nav == "quienes" %} aria-current="page"{% endif %}>Quiénes somos</a></li>
       </ul>
       <div class="nav__redes redes">
