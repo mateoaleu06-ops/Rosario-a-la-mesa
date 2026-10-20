@@ -41,7 +41,7 @@ nav: inicio
   </div>
   <div class="grilla-3">
     {% for n in resto limit: 3 %}{% include tarjeta.html nota=n %}{% endfor %}
-    {% if site.modo_prueba %}{% assign faltan = 3 | minus: resto.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}{% include tarjeta-ejemplo.html seccion="entrevistas" formato="Entrevista" %}{% endfor %}{% endif %}{% endif %}
+    {% if site.modo_prueba %}{% assign faltan = 3 | minus: resto.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}{% include tarjeta-ejemplo.html seccion="sobremesa" formato="Debate" %}{% endfor %}{% endif %}{% endif %}
   </div>
 </section>
 {% endif %}

@@ -1,6 +1,6 @@
 ---
 titulo: "Delivery vs. salir a comer: el fin de una guerra que nunca existió"
-seccion: entrevistas
+seccion: sobremesa
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 10:00:00 -0300

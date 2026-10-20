@@ -1,6 +1,6 @@
 ---
 titulo: "El boom de la comida instagrameable: cuando el plato también está pensado para la foto"
-seccion: entrevistas
+seccion: sobremesa
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 10:20:00 -0300

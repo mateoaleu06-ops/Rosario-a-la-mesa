@@ -1,7 +1,7 @@
 ---
 titulo: "¿Es seguro comer el bife bien rojo por dentro?"
 bajada: "El eterno dilema de la parrilla: ¿jugoso es sinónimo de crudo?"
-seccion: entrevistas
+seccion: sobremesa
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 09:30:00 -0300

@@ -11,7 +11,7 @@
 
 titulo: "Título de la nota"
 bajada: "Una o dos oraciones que amplían el título."
-seccion: recomendaciones        # recomendaciones | entrevistas | juegos
+seccion: recomendaciones        # recomendaciones | sobremesa | juegos
 formato: Nota                   # Nota | Reseña | Entrevista | Debate | Podcast | Video | Vertical | Juego
 tipo: Cafeterías                # Solo para recomendaciones: Restaurantes | Bares | Cafeterías | Según presupuesto | Barrios | Virales
 autor: "Nombre Apellido"

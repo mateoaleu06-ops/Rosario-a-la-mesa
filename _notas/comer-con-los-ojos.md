@@ -1,7 +1,7 @@
 ---
 titulo: "La puerta de entrada: por qué comemos primero con los ojos"
 bajada: "La iluminación, la vajilla, la disposición de los ingredientes y hasta el color del mantel se transformaron en parte del menú. En tiempos de redes sociales, la primera mordida ya no es con la boca: es con la vista. Pero los especialistas coinciden en algo clave: lo que hace volver a un cliente es harina de otro costal."
-seccion: entrevistas
+seccion: sobremesa
 formato: Debate
 autor: "Lola Cacheiro"
 fecha: 2026-10-19 09:00:00 -0300

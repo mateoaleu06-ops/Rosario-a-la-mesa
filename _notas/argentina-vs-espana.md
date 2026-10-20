@@ -1,6 +1,6 @@
 ---
 titulo: "Mismo idioma, distinta mesa: la cocina argentina y la española"
-seccion: entrevistas
+seccion: sobremesa
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 08:00:00 -0300

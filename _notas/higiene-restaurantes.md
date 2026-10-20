@@ -1,7 +1,7 @@
 ---
 titulo: "Lo que no vemos cuando salimos a comer: cómo se controla la higiene de los restaurantes en Rosario"
 bajada: "La limpieza de un salón no siempre permite conocer las condiciones en las que se preparan los alimentos. En Rosario, el Instituto del Alimento tiene a su cargo tareas de control y prevención de riesgos sanitarios. Qué se inspecciona, cuáles son las responsabilidades de los locales gastronómicos y qué puede hacer un consumidor ante una posible irregularidad."
-seccion: entrevistas
+seccion: sobremesa
 formato: Nota
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 11:30:00 -0300

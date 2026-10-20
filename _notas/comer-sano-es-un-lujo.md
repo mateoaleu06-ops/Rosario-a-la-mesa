@@ -1,6 +1,6 @@
 ---
 titulo: "¿Comer sano es un lujo? Los precios detrás de la alimentación saludable"
-seccion: entrevistas
+seccion: sobremesa
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 08:30:00 -0300

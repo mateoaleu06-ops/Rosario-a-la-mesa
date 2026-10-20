@@ -4,10 +4,10 @@
   url: /secciones/recomendaciones/
   descripcion: "Restaurantes, bares y cafeterías de Rosario para decidir dónde comer."
 
-- clave: entrevistas
-  nombre: Entrevistas y debates
-  url: /secciones/entrevistas-y-debates/
-  descripcion: "Las personas y las discusiones detrás de la escena gastronómica de la ciudad."
+- clave: sobremesa
+  nombre: Sobremesa
+  url: /secciones/sobremesa/
+  descripcion: "Tendencias, debates y preguntas sobre cómo comemos."
 
 - clave: juegos
   nombre: Juegos
