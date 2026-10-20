@@ -577,3 +577,6 @@ span.ultimas__titulo { font-weight: 700; font-size: 1.05rem; }
 .video__play { width: 72px; height: 50px; border-radius: 12px; background: var(--rojo); position: relative; box-shadow: 0 2px 12px rgba(0,0,0,.35); transition: transform .15s; }
 .video__play::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-35%, -50%); border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent var(--crema); }
 .video__portada:hover .video__play, .video__portada:focus-visible .video__play { transform: scale(1.08); background: var(--rojo-hover); }
+
+/* Redacción: dos por fila también en celular */
+@media (max-width: 420px) { .equipo.grilla-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; } }
