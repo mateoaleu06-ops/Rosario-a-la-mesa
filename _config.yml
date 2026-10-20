@@ -9,13 +9,13 @@ lema: "Gastronomía rosarina: dónde comer y qué hay detrás de cada lugar"
 description: "Medio gastronómico de Rosario: recomendaciones, historias y protagonistas de la escena gastronómica de la ciudad."
 
 # Redes y contacto (pegá el enlace completo, ej.: "https://www.instagram.com/rosarioalamesa")
-youtube: ""
-instagram: ""
+youtube: "https://www.youtube.com/@RosarioalaMesa"
+instagram: "https://www.instagram.com/rosarioalamesa/"
 email: ""
 
 # Datos académicos para el pie de página
-materia: ""
-universidad: ""
+materia: "Comunicación Multimedial"
+universidad: "UCA Rosario"
 
 # MODO PRUEBA
 # true  = muestra la franja de "versión de prueba" y completa con [MARCADORES] los espacios

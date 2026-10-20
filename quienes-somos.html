@@ -31,7 +31,7 @@ permalink: /quienes-somos/
       <li>
         {% if p.foto and p.foto != "" %}<img class="retrato" src="{{ '/img/equipo/' | append: p.foto | relative_url }}" alt="">{% else %}<div class="img-ph img-ph--retrato" aria-hidden="true"></div>{% endif %}
         <strong>{{ p.nombre }}</strong>
-        <span>{{ p.rol }}</span>
+        {% if p.rol and p.rol != "" %}<span>{{ p.rol }}</span>{% endif %}
       </li>
       {% endfor %}
     </ul>

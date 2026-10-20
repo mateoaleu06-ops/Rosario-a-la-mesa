@@ -1,19 +1,19 @@
 # Integrantes de la redacción (se muestran en "Quiénes somos").
-# Para cada persona: nombre, rol y, si quieren, una foto subida a la carpeta img/equipo/
-# Copiá un bloque de 3 líneas por cada integrante. Borrá los que sobren.
+# Para cada persona: nombre, rol (opcional) y foto (opcional, subida a la carpeta img/equipo/).
+# Para agregar a alguien, copiá un bloque de 3 líneas. Para quitarlo, borrá su bloque.
 
-- nombre: "[NOMBRE Y APELLIDO]"
-  rol: "[ROL EN LA REDACCIÓN]"
+- nombre: "Benjamin Flores"
+  rol: ""
   foto: ""
 
-- nombre: "[NOMBRE Y APELLIDO]"
-  rol: "[ROL EN LA REDACCIÓN]"
+- nombre: "Lola Cacheiro"
+  rol: ""
   foto: ""
 
-- nombre: "[NOMBRE Y APELLIDO]"
-  rol: "[ROL EN LA REDACCIÓN]"
+- nombre: "Victoria Vaschetto"
+  rol: ""
   foto: ""
 
-- nombre: "[NOMBRE Y APELLIDO]"
-  rol: "[ROL EN LA REDACCIÓN]"
+- nombre: "Mateo Aleu"
+  rol: ""
   foto: ""
