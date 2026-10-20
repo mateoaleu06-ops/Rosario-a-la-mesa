@@ -1,0 +1,32 @@
+---
+layout: base
+---
+{%- assign sec = site.data.secciones | where: "clave", page.seccion | first -%}
+{%- assign notas = site.notas | where: "seccion", page.seccion | where_exp: "n", "n.fecha" | sort: "fecha" | reverse -%}
+<div class="contenedor">
+  <header class="cabeza-seccion">
+    <h1>{{ sec.nombre }}</h1>
+    <p>{{ page.intro | default: sec.descripcion }}</p>
+    {% if page.filtros and notas.size > 0 %}
+    {%- assign tipos = notas | map: "tipo" | compact | uniq -%}
+    {% if tipos.size > 1 %}
+    <div class="filtros" role="group" aria-label="Filtrar por tipo de lugar">
+      <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+      {% for t in tipos %}<button type="button" data-filtro="{{ t | slugify }}" aria-pressed="false">{{ t }}</button>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endif %}
+  </header>
+
+  <section class="bloque" aria-label="Notas de la sección">
+    {% if notas.size > 0 %}
+    <div class="grilla-3">
+      {% for n in notas %}{% include tarjeta.html nota=n nivel="h2" tipo=page.filtros %}{% endfor %}
+    </div>
+    <p class="filtros__vacio" hidden>Todavía no hay notas de este tipo.</p>
+    {% else %}
+    <p class="vacio">Todavía no hay notas publicadas en esta sección.</p>
+    {% endif %}
+  </section>
+</div>

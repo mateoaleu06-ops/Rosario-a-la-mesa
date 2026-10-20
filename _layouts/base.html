@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% if page.titulo %}{{ page.titulo }} · {% elsif page.title and page.nav != "inicio" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.bajada | default: page.description | default: site.description | escape }}">
+  <link rel="icon" href="{{ '/img/favicon.png' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
+  <script src="{{ '/js/main.js' | relative_url }}"></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+{% include cabecera.html %}
+<main id="contenido">
+{{ content }}
+</main>
+{% include pie.html %}
+</body>
+</html>

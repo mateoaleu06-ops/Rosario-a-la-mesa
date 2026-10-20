@@ -1,0 +1,8 @@
+{%- assign n = include.nota -%}
+{%- assign sec = site.data.secciones | where: "clave", n.seccion | first -%}
+<p class="kicker">
+  {%- if sec -%}<a href="{{ sec.url | relative_url }}">{{ sec.nombre }}</a>{%- endif -%}
+  {%- if n.formato -%}<span class="formato formato--{{ n.formato | downcase }}">{{ n.formato }}</span>{%- endif -%}
+  {%- if include.tipo and n.tipo -%}<span class="agenda">{{ n.tipo }}</span>{%- endif -%}
+  {%- if n.actualidad -%}<span class="agenda agenda--actualidad">Actualidad</span>{%- endif -%}
+</p>

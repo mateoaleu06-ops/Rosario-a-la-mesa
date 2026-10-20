@@ -1,0 +1,28 @@
+<footer class="pie">
+  <div class="contenedor pie__grilla">
+    <div>
+      <p class="pie__nombre">{{ site.title }}</p>
+      <p>Un programa de comunicación dedicado a la gastronomía de Rosario. Recorremos restaurantes, cafeterías y espacios gastronómicos de la ciudad para conocer sus propuestas, sus historias y sus protagonistas.</p>
+    </div>
+    <div>
+      <h2>Secciones</h2>
+      <ul>
+        {% for s in site.data.secciones %}<li><a href="{{ s.url | relative_url }}">{{ s.nombre }}</a></li>{% endfor %}
+        <li><a href="{{ '/quienes-somos/' | relative_url }}">Quiénes somos</a></li>
+      </ul>
+    </div>
+    {% if site.youtube != "" or site.instagram != "" or site.email != "" %}
+    <div>
+      <h2>Seguinos</h2>
+      <ul>
+        {% if site.youtube != "" %}<li><a href="{{ site.youtube }}">YouTube</a></li>{% endif %}
+        {% if site.instagram != "" %}<li><a href="{{ site.instagram }}">Instagram</a></li>{% endif %}
+        {% if site.email != "" %}<li>Contacto: {{ site.email }}</li>{% endif %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  <div class="contenedor pie__legal">
+    {{ site.title }}{% if site.materia != "" %} · {{ site.materia }}{% endif %}{% if site.universidad != "" %} · {{ site.universidad }}{% endif %} · {{ site.time | date: "%Y" }}
+  </div>
+</footer>

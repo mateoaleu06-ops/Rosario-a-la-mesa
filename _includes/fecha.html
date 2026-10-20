@@ -1,0 +1,6 @@
+{%- comment -%} Muestra una fecha en castellano. Uso: {% include fecha.html fecha=nota.fecha %} (agregar corta=true para "19 oct.") {%- endcomment -%}
+{%- if include.fecha -%}
+{%- assign meses = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," -%}
+{%- assign m = include.fecha | date: "%-m" | minus: 1 -%}
+<time datetime="{{ include.fecha | date: '%Y-%m-%d' }}">{%- if include.corta -%}{{ include.fecha | date: "%-d" }} {{ meses[m] | slice: 0, 3 }}.{%- else -%}{{ include.fecha | date: "%-d" }} de {{ meses[m] }} de {{ include.fecha | date: "%Y" }}{%- endif -%}</time>
+{%- endif -%}

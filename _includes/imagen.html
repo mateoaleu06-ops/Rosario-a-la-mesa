@@ -1,0 +1,8 @@
+{%- comment -%} Imagen de una nota. Si no tiene, muestra un fondo con el logo. {%- endcomment -%}
+{%- assign n = include.nota -%}
+{%- if n.imagen and n.imagen != "" -%}
+  {%- if n.imagen contains "://" -%}{%- assign src = n.imagen -%}{%- else -%}{%- assign src = "/img/notas/" | append: n.imagen | relative_url -%}{%- endif -%}
+<img class="foto {{ include.clase }}" src="{{ src }}" alt="{{ n.imagen_alt | default: '' | escape }}" loading="lazy">
+{%- else -%}
+<div class="img-ph sin-foto {{ include.clase }}" aria-hidden="true"><img src="{{ '/img/logo.png' | relative_url }}" alt=""></div>
+{%- endif -%}

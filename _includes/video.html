@@ -1,0 +1,5 @@
+{%- comment -%} Inserta un video de YouTube a partir del enlace completo (watch?v=, youtu.be/ o shorts/). {%- endcomment -%}
+{%- assign yt = include.enlace | split: "v=" | last | split: "&" | first | split: "youtu.be/" | last | split: "shorts/" | last | split: "?" | first -%}
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ yt }}" title="{{ include.titulo | escape }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

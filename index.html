@@ -1,250 +1,131 @@
-<!DOCTYPE html>
-<html lang="es-AR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Rosario a la mesa</title>
-  <meta name="description" content="Medio gastronómico de Rosario: recomendaciones, historias y protagonistas de la escena gastronómica de la ciudad.">
-  <link rel="icon" href="img/favicon.png">
-  <!-- Tipografías: Anton (títulos, definida por el equipo) y Archivo (texto, propuesta) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,600;0,700;1,400&display=swap">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js"></script>
-</head>
-<body>
-<a class="saltar" href="#contenido">Saltar al contenido</a>
+---
+layout: base
+nav: inicio
+---
+{%- comment -%}
+  PORTADA. No hace falta editar este archivo para publicar notas:
+  se arma sola con las notas de la carpeta _notas.
+  - Nota principal: la más reciente marcada con "destacada: true" (si no hay, la más reciente).
+  - Después vienen las 3 siguientes y luego las "Últimas publicaciones".
+{%- endcomment -%}
+{%- assign notas = site.notas | where_exp: "n", "n.fecha" | sort: "fecha" | reverse -%}
+{%- assign destacadas = notas | where: "destacada", true -%}
+{%- if destacadas.size > 0 -%}{%- assign principal = destacadas.first -%}{%- else -%}{%- assign principal = notas.first -%}{%- endif -%}
+{%- assign resto = notas | where_exp: "n", "n.url != principal.url" -%}
+{%- assign con_video = notas | where_exp: "n", "n.youtube" | where_exp: "n", "n.youtube != ''" -%}
+{%- assign verticales = notas | where: "formato", "Vertical" -%}
 
-<p class="aviso-v0">Versión de prueba (V0). Los textos entre [CORCHETES] son espacios a completar con contenido real del medio.</p>
-
-<header class="cabecera">
-  <div class="contenedor cabecera__fila">
-    <a class="marca" href="index.html">
-      <img src="img/logo.png" alt="" width="92" height="92">
-      <span class="marca__texto">
-        <span class="marca__nombre">Rosario a la mesa</span>
-        <span class="marca__lema">Gastronomía rosarina: dónde comer y qué hay detrás de cada lugar</span>
-      </span>
-    </a>
-    <div class="cabecera__lateral">
-      <time data-fecha-hoy></time>
-      <div class="redes">
-        <!-- PENDIENTE: reemplazar # por el enlace real del canal y la cuenta -->
-        <a href="#">YouTube</a>
-        <a href="#">Instagram</a>
-      </div>
+{% if principal %}
+<div class="contenedor">
+  <article class="principal">
+    {% include imagen.html nota=principal %}
+    <div class="principal__texto">
+      {% include kicker.html nota=principal %}
+      <h1 class="principal__titulo"><a href="{{ principal.url | relative_url }}">{{ principal.titulo }}</a></h1>
+      {% if principal.bajada %}<p class="principal__bajada">{{ principal.bajada }}</p>{% endif %}
+      <p class="meta">{% if principal.autor %}Por <strong>{{ principal.autor }}</strong> · {% endif %}{% include fecha.html fecha=principal.fecha %}</p>
     </div>
-    <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+  </article>
+</div>
+{% else %}
+<div class="contenedor">
+  <h1 class="sr-only">{{ site.title }}</h1>
+  <p class="vacio vacio--portada">Todavía no hay notas publicadas. Muy pronto, lo mejor de la gastronomía rosarina.</p>
+</div>
+{% endif %}
+
+{% if resto.size > 0 %}
+<section class="contenedor bloque" aria-labelledby="t-destacadas">
+  <div class="bloque__cabeza">
+    <h2 class="bloque__titulo" id="t-destacadas">También en la mesa</h2>
   </div>
-  <nav class="nav" id="menu-principal" aria-label="Navegación principal">
-    <div class="contenedor">
-      <ul>
-        <li><a href="index.html" aria-current="page">Inicio</a></li>
-        <li><a href="secciones/recomendaciones.html">Recomendaciones</a></li>
-        <li><a href="secciones/entrevistas-y-debates.html">Entrevistas y debates</a></li>
-        <li><a href="secciones/juegos.html">Juegos</a></li>
-        <li><a href="quienes-somos.html">Quiénes somos</a></li>
-      </ul>
-      <div class="nav__redes redes"><a href="#">YouTube</a><a href="#">Instagram</a></div>
-    </div>
-  </nav>
-</header>
-
-<main id="contenido">
-
-  <!-- ===== NOTA PRINCIPAL: la historia más importante del día ===== -->
-  <div class="contenedor">
-    <article class="principal">
-      <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN PRINCIPAL]</div>
-      <div class="principal__texto">
-        <p class="kicker"><a href="secciones/recomendaciones.html">Recomendaciones</a><span class="formato">Nota</span></p>
-        <h1 class="principal__titulo"><a href="notas/plantilla-nota.html">[TÍTULO DE LA NOTA PRINCIPAL]</a></h1>
-        <p class="principal__bajada">[BAJADA DE LA NOTA PRINCIPAL: qué se cuenta y por qué importa a quien la lee]</p>
-        <p class="meta">Por <strong>[AUTOR/A]</strong> · <time>[FECHA]</time></p>
-      </div>
-    </article>
+  <div class="grilla-3">
+    {% for n in resto limit: 3 %}{% include tarjeta.html nota=n %}{% endfor %}
   </div>
+</section>
+{% endif %}
 
-  <!-- ===== NOTAS SECUNDARIAS ===== -->
-  <section class="contenedor bloque" aria-labelledby="t-destacadas">
+{% if con_video.size > 0 or verticales.size > 0 %}
+{%- assign av = con_video.first -%}
+<section class="banda-av" aria-labelledby="t-av">
+  <div class="contenedor bloque">
     <div class="bloque__cabeza">
-      <h2 class="bloque__titulo" id="t-destacadas">También en la mesa</h2>
+      <h2 class="bloque__titulo" id="t-av">Mirá y escuchá</h2>
+      {% if site.youtube != "" %}<a class="bloque__mas" href="{{ site.youtube }}">Canal de YouTube →</a>{% endif %}
     </div>
-    <div class="grilla-3">
-        <article class="tarjeta">
-          <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN]</div>
-          <p class="kicker"><a href="secciones/entrevistas-y-debates.html">Entrevistas y debates</a><span class="formato">Entrevista</span></p>
-          <h3 class="tarjeta__titulo"><a href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a></h3>
-          <p class="tarjeta__bajada">[BAJADA: una o dos oraciones que amplían el título]</p>
-          <p class="meta">Por <strong>[AUTOR/A]</strong> · <time>[FECHA]</time></p>
-        </article>
-        <article class="tarjeta">
-          <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN]</div>
-          <p class="kicker"><a href="secciones/recomendaciones.html">Recomendaciones</a><span class="formato">Reseña</span></p>
-          <h3 class="tarjeta__titulo"><a href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a></h3>
-          <p class="tarjeta__bajada">[BAJADA: una o dos oraciones que amplían el título]</p>
-          <p class="meta">Por <strong>[AUTOR/A]</strong> · <time>[FECHA]</time></p>
-        </article>
-        <article class="tarjeta">
-          <div class="img-ph" role="img" aria-label="Imagen pendiente">[IMAGEN]</div>
-          <p class="kicker"><a href="secciones/recomendaciones.html">Recomendaciones</a><span class="formato">Nota</span><span class="agenda agenda--actualidad">Actualidad</span></p>
-          <h3 class="tarjeta__titulo"><a href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a></h3>
-          <p class="tarjeta__bajada">[BAJADA: una o dos oraciones que amplían el título]</p>
-          <p class="meta">Por <strong>[AUTOR/A]</strong> · <time>[FECHA]</time></p>
-        </article>
-    </div>
-  </section>
-
-  <!-- ===== ESPACIO AUDIOVISUAL: podcast, videos y verticales ===== -->
-  <section class="banda-av" aria-labelledby="t-av">
-    <div class="contenedor bloque">
-      <div class="bloque__cabeza">
-        <h2 class="bloque__titulo" id="t-av">Mirá y escuchá</h2>
-        <a class="bloque__mas" href="#">Canal de YouTube →</a>
-      </div>
-      <div class="av-grilla">
-        <article class="av-destacado">
-          <!-- Cuando tengan el episodio, reemplazar este div por el código para insertar de YouTube:
-               <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO" title="[TÍTULO DEL EPISODIO]"
-                 style="width:100%;aspect-ratio:16/9;border:0" allowfullscreen loading="lazy"></iframe> -->
-          <div class="img-ph img-ph--video" role="img" aria-label="Video pendiente">[VIDEO O EPISODIO DESTACADO]</div>
-          <p class="kicker"><span class="formato">Podcast</span><span class="formato">Video</span></p>
-          <h3>[TÍTULO DEL EPISODIO]</h3>
-          <p>[DESCRIPCIÓN BREVE DEL EPISODIO: lugar, invitados/as, tema]</p>
-          <p class="meta">[DURACIÓN] · <time>[FECHA]</time></p>
-          <div class="botonera">
-            <a class="boton" href="#">Ver en YouTube</a>
-            <a class="boton" href="notas/plantilla-nota.html">Leer la nota</a>
-          </div>
-        </article>
-        <div class="av-lateral">
-          <h3>Verticales</h3>
-          <div class="av-verticales">
-            <figure><div class="img-ph img-ph--vertical" role="img" aria-label="Vertical pendiente">[VERTICAL]</div><figcaption>[TÍTULO DEL VERTICAL]</figcaption></figure>
-            <figure><div class="img-ph img-ph--vertical" role="img" aria-label="Vertical pendiente">[VERTICAL]</div><figcaption>[TÍTULO DEL VERTICAL]</figcaption></figure>
-            <figure><div class="img-ph img-ph--vertical" role="img" aria-label="Vertical pendiente">[VERTICAL]</div><figcaption>[TÍTULO DEL VERTICAL]</figcaption></figure>
-          </div>
-          <a class="boton" href="#">Ver más en Instagram</a>
+    <div class="av-grilla{% if av == nil or verticales.size == 0 %} av-grilla--una{% endif %}">
+      {% if av %}
+      <article class="av-destacado">
+        {% include video.html enlace=av.youtube titulo=av.titulo %}
+        {% include kicker.html nota=av %}
+        <h3><a href="{{ av.url | relative_url }}">{{ av.titulo }}</a></h3>
+        {% if av.bajada %}<p>{{ av.bajada }}</p>{% endif %}
+        <p class="meta">{% include fecha.html fecha=av.fecha %}</p>
+      </article>
+      {% endif %}
+      {% if verticales.size > 0 %}
+      <div class="av-lateral">
+        <h3>Verticales</h3>
+        <div class="av-verticales">
+          {% for v in verticales limit: 3 %}
+          <a class="av-vertical" href="{{ v.url | relative_url }}">
+            {% include imagen.html nota=v clase="img-ph--vertical vertical" %}
+            <span>{{ v.titulo }}</span>
+          </a>
+          {% endfor %}
         </div>
+        {% if site.instagram != "" %}<a class="boton" href="{{ site.instagram }}">Ver más en Instagram</a>{% endif %}
       </div>
+      {% endif %}
     </div>
+  </div>
+</section>
+{% endif %}
+
+<div class="contenedor bloque portada-dos">
+  <section aria-labelledby="t-ultimas">
+    <div class="bloque__cabeza">
+      <h2 class="bloque__titulo" id="t-ultimas">Últimas publicaciones</h2>
+    </div>
+    {% if notas.size > 0 %}
+    <ol class="ultimas">
+      {% for n in notas limit: 8 %}
+      <li>
+        {% include fecha.html fecha=n.fecha corta=true %}
+        <div class="ultimas__cuerpo">
+          {% include kicker.html nota=n %}
+          <a class="ultimas__titulo" href="{{ n.url | relative_url }}">{{ n.titulo }}</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="vacio">Todavía no hay publicaciones.</p>
+    {% endif %}
   </section>
 
-  <!-- ===== ÚLTIMAS PUBLICACIONES + ACCESO A SECCIONES ===== -->
-  <div class="contenedor bloque portada-dos">
-    <section aria-labelledby="t-ultimas">
-      <div class="bloque__cabeza">
-        <h2 class="bloque__titulo" id="t-ultimas">Últimas publicaciones</h2>
-      </div>
-      <ol class="ultimas">
-        <li>
-          <time>[FECHA]</time>
-          <div class="ultimas__cuerpo">
-            <p class="kicker"><a href="secciones/recomendaciones.html">Recomendaciones</a><span class="formato">Reseña</span></p>
-            <a class="ultimas__titulo" href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a>
-          </div>
-        </li>
-        <li>
-          <time>[FECHA]</time>
-          <div class="ultimas__cuerpo">
-            <p class="kicker"><a href="secciones/entrevistas-y-debates.html">Entrevistas y debates</a><span class="formato formato--podcast">Podcast</span></p>
-            <a class="ultimas__titulo" href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a>
-          </div>
-        </li>
-        <li>
-          <time>[FECHA]</time>
-          <div class="ultimas__cuerpo">
-            <p class="kicker"><a href="secciones/recomendaciones.html">Recomendaciones</a><span class="formato formato--vertical">Vertical</span></p>
-            <a class="ultimas__titulo" href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a>
-          </div>
-        </li>
-        <li>
-          <time>[FECHA]</time>
-          <div class="ultimas__cuerpo">
-            <p class="kicker"><a href="secciones/juegos.html">Juegos</a><span class="formato">Juego</span></p>
-            <a class="ultimas__titulo" href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a>
-          </div>
-        </li>
-        <li>
-          <time>[FECHA]</time>
-          <div class="ultimas__cuerpo">
-            <p class="kicker"><a href="secciones/entrevistas-y-debates.html">Entrevistas y debates</a><span class="formato">Debate</span></p>
-            <a class="ultimas__titulo" href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a>
-          </div>
-        </li>
-        <li>
-          <time>[FECHA]</time>
-          <div class="ultimas__cuerpo">
-            <p class="kicker"><a href="secciones/recomendaciones.html">Recomendaciones</a><span class="formato">Nota</span></p>
-            <a class="ultimas__titulo" href="notas/plantilla-nota.html">[TÍTULO DE NOTA]</a>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <section aria-labelledby="t-secciones">
-      <div class="bloque__cabeza">
-        <h2 class="bloque__titulo" id="t-secciones">Secciones</h2>
-      </div>
-      <div class="secciones-lista">
-        <a class="seccion-acceso" href="secciones/recomendaciones.html">
-          <h3>Recomendaciones</h3>
-          <p>Restaurantes, bares y cafeterías de Rosario para decidir dónde comer.</p>
-        </a>
-        <a class="seccion-acceso" href="secciones/entrevistas-y-debates.html">
-          <h3>Entrevistas y debates</h3>
-          <p>Las personas y las discusiones detrás de la escena gastronómica de la ciudad.</p>
-        </a>
-        <a class="seccion-acceso" href="secciones/juegos.html">
-          <h3>Juegos</h3>
-          <p>Propuestas para jugar y participar con la audiencia.</p>
-        </a>
-      </div>
-    </section>
-  </div>
-
-  <!-- ===== PROPUESTA EDITORIAL (identidad del medio) ===== -->
-  <section class="contenedor bloque" aria-labelledby="t-promesa">
-    <h2 class="sr-only" id="t-promesa">Qué es Rosario a la mesa</h2>
-    <div class="promesa">
-      <img src="img/logo.png" alt="Logo de Rosario a la mesa: una mesa dibujada en línea roja bajo el nombre del medio" width="180" height="180">
-      <div>
-        <p>Descubrir qué tiene para ofrecer la gastronomía rosarina y contar qué hay detrás de cada lugar, para ayudarte a encontrar nuevos espacios y elegir dónde comer.</p>
-        <p><a href="quienes-somos.html">Conocé quiénes somos →</a></p>
-      </div>
+  <section aria-labelledby="t-secciones">
+    <div class="bloque__cabeza">
+      <h2 class="bloque__titulo" id="t-secciones">Secciones</h2>
+    </div>
+    <div class="secciones-lista">
+      {% for s in site.data.secciones %}
+      <a class="seccion-acceso" href="{{ s.url | relative_url }}">
+        <h3>{{ s.nombre }}</h3>
+        <p>{{ s.descripcion }}</p>
+      </a>
+      {% endfor %}
     </div>
   </section>
+</div>
 
-</main>
-
-<footer class="pie">
-  <div class="contenedor pie__grilla">
+<section class="contenedor bloque" aria-labelledby="t-promesa">
+  <h2 class="sr-only" id="t-promesa">Qué es Rosario a la mesa</h2>
+  <div class="promesa">
+    <img src="{{ '/img/logo.png' | relative_url }}" alt="Logo de Rosario a la mesa: una mesa dibujada en línea roja bajo el nombre del medio" width="180" height="180">
     <div>
-      <p class="pie__nombre">Rosario a la mesa</p>
-      <p>Un programa de comunicación dedicado a la gastronomía de Rosario. Recorremos restaurantes, cafeterías y espacios gastronómicos de la ciudad para conocer sus propuestas, sus historias y sus protagonistas.</p>
-    </div>
-    <div>
-      <h2>Secciones</h2>
-      <ul>
-        <li><a href="secciones/recomendaciones.html">Recomendaciones</a></li>
-        <li><a href="secciones/entrevistas-y-debates.html">Entrevistas y debates</a></li>
-        <li><a href="secciones/juegos.html">Juegos</a></li>
-        <li><a href="quienes-somos.html">Quiénes somos</a></li>
-      </ul>
-    </div>
-    <div>
-      <h2>Seguinos</h2>
-      <ul>
-        <li><a href="#">YouTube</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li>Contacto: [EMAIL DE CONTACTO]</li>
-      </ul>
+      <p>Descubrir qué tiene para ofrecer la gastronomía rosarina y contar qué hay detrás de cada lugar, para ayudarte a encontrar nuevos espacios y elegir dónde comer.</p>
+      <p><a href="{{ '/quienes-somos/' | relative_url }}">Conocé quiénes somos →</a></p>
     </div>
   </div>
-  <div class="contenedor pie__legal">
-    Rosario a la mesa · [MATERIA / CÁTEDRA] · [UNIVERSIDAD] · 2026
-  </div>
-</footer>
-</body>
-</html>
+</section>

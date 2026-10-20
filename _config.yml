@@ -1,0 +1,50 @@
+# =========================================================
+#  CONFIGURACIÓN GENERAL DE ROSARIO A LA MESA
+#  Completá los datos de abajo. Lo que quede vacío ("") no se muestra.
+#  Después de guardar, la web se actualiza sola en 1 o 2 minutos.
+# =========================================================
+
+title: "Rosario a la mesa"
+lema: "Gastronomía rosarina: dónde comer y qué hay detrás de cada lugar"
+description: "Medio gastronómico de Rosario: recomendaciones, historias y protagonistas de la escena gastronómica de la ciudad."
+
+# Redes y contacto (pegá el enlace completo, ej.: "https://www.instagram.com/rosarioalamesa")
+youtube: ""
+instagram: ""
+email: ""
+
+# Datos académicos para el pie de página
+materia: ""
+universidad: ""
+
+# Franja negra de "versión de prueba" arriba de todo. Ponela en false cuando el sitio esté listo.
+aviso_prueba: true
+
+# ---------------------------------------------------------
+#  CONFIGURACIÓN TÉCNICA — no hace falta tocar nada de acá para abajo
+# ---------------------------------------------------------
+url: "https://mateoaleu06-ops.github.io"
+baseurl: "/Rosario-a-la-mesa"
+lang: es-AR
+timezone: America/Argentina/Buenos_Aires
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  notas:
+    output: true
+    permalink: /notas/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: notas
+    values:
+      layout: nota
+
+exclude:
+  - LEEME.md
+  - PLANTILLA-NOTA.md
+  - README.md

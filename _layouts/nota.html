@@ -1,0 +1,86 @@
+---
+layout: base
+---
+{%- assign sec = site.data.secciones | where: "clave", page.seccion | first -%}
+{%- assign todas = site.notas | where_exp: "n", "n.fecha" | where_exp: "n", "n.url != page.url" | sort: "fecha" | reverse -%}
+{%- assign misma = todas | where: "seccion", page.seccion -%}
+{%- assign otras = todas | where_exp: "n", "n.seccion != page.seccion" -%}
+{%- assign relacionadas = misma | concat: otras -%}
+<div class="contenedor">
+  <nav class="migas" aria-label="Ubicación">
+    <ol>
+      <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+      {% if sec %}<li><a href="{{ sec.url | relative_url }}">{{ sec.nombre }}</a></li>{% endif %}
+    </ol>
+  </nav>
+
+  <article class="nota">
+    <header class="nota__cabeza">
+      {% include kicker.html nota=page tipo=true %}
+      <h1 class="nota__titulo">{{ page.titulo }}</h1>
+      {% if page.bajada %}<p class="nota__bajada">{{ page.bajada }}</p>{% endif %}
+      <p class="meta firma">
+        {% if page.autor %}<span>Por <strong>{{ page.autor }}</strong></span>{% endif %}
+        <span>{% include fecha.html fecha=page.fecha %}</span>
+      </p>
+    </header>
+
+    {% if page.youtube and page.youtube != "" %}
+    <figure class="nota__foto">
+      {% include video.html enlace=page.youtube titulo=page.titulo %}
+      <figcaption><a href="{{ page.youtube }}">Ver en YouTube</a></figcaption>
+    </figure>
+    {% elsif page.imagen and page.imagen != "" %}
+    <figure class="nota__foto">
+      {% include imagen.html nota=page %}
+      {% if page.epigrafe %}<figcaption>{{ page.epigrafe }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+
+    <div class="nota__cuerpo-wrap{% unless page.lugar %} nota__cuerpo-wrap--solo{% endunless %}">
+      <div class="nota__cuerpo">
+        {{ content }}
+
+        {% if page.instagram and page.instagram != "" %}
+        <p><a class="boton boton--rojo" href="{{ page.instagram }}">Ver en Instagram</a></p>
+        {% endif %}
+
+        {% if page.fuentes %}
+        <section class="fuentes" aria-labelledby="t-fuentes">
+          <h2 id="t-fuentes">Fuentes y enlaces</h2>
+          <ul>
+            {% for f in page.fuentes %}<li>{{ f | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+      </div>
+
+      {% if page.lugar %}
+      <aside class="ficha" aria-labelledby="t-ficha">
+        <h2 id="t-ficha">Ficha del lugar</h2>
+        <dl>
+          {% if page.lugar.nombre %}<div><dt>Lugar</dt><dd>{{ page.lugar.nombre }}</dd></div>{% endif %}
+          {% if page.tipo %}<div><dt>Tipo</dt><dd>{{ page.tipo }}</dd></div>{% endif %}
+          {% if page.lugar.direccion %}<div><dt>Dirección</dt><dd>{{ page.lugar.direccion }}</dd></div>{% endif %}
+          {% if page.lugar.barrio %}<div><dt>Barrio</dt><dd>{{ page.lugar.barrio }}</dd></div>{% endif %}
+          {% if page.lugar.horarios %}<div><dt>Horarios</dt><dd>{{ page.lugar.horarios }}</dd></div>{% endif %}
+          {% if page.lugar.precio %}<div><dt>Precio de referencia</dt><dd>{{ page.lugar.precio }}</dd></div>{% endif %}
+          {% if page.lugar.redes %}<div><dt>Redes</dt><dd>{{ page.lugar.redes }}</dd></div>{% endif %}
+        </dl>
+      </aside>
+      {% endif %}
+    </div>
+  </article>
+</div>
+
+{% if relacionadas.size > 0 %}
+<section class="contenedor bloque" aria-labelledby="t-rel">
+  <div class="bloque__cabeza">
+    <h2 class="bloque__titulo" id="t-rel">Seguí leyendo</h2>
+  </div>
+  <div class="grilla-3">
+    {% for n in relacionadas limit: 3 %}{% include tarjeta.html nota=n %}{% endfor %}
+  </div>
+</section>
+{% endif %}

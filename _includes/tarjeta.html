@@ -1,0 +1,9 @@
+{%- assign n = include.nota -%}
+{%- assign nivel = include.nivel | default: "h3" -%}
+<article class="tarjeta"{% if n.tipo %} data-tipo="{{ n.tipo | slugify }}"{% endif %}>
+  {% include imagen.html nota=n %}
+  {% include kicker.html nota=n tipo=include.tipo %}
+  <{{ nivel }} class="tarjeta__titulo"><a href="{{ n.url | relative_url }}">{{ n.titulo }}</a></{{ nivel }}>
+  {% if n.bajada %}<p class="tarjeta__bajada">{{ n.bajada }}</p>{% endif %}
+  <p class="meta">{% if n.autor %}Por <strong>{{ n.autor }}</strong> · {% endif %}{% include fecha.html fecha=n.fecha %}</p>
+</article>

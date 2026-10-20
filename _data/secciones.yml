@@ -1,0 +1,15 @@
+# Secciones del medio. La "clave" es lo que se escribe en el campo "seccion:" de cada nota.
+- clave: recomendaciones
+  nombre: Recomendaciones
+  url: /secciones/recomendaciones/
+  descripcion: "Restaurantes, bares y cafeterías de Rosario para decidir dónde comer."
+
+- clave: entrevistas
+  nombre: Entrevistas y debates
+  url: /secciones/entrevistas-y-debates/
+  descripcion: "Las personas y las discusiones detrás de la escena gastronómica de la ciudad."
+
+- clave: juegos
+  nombre: Juegos
+  url: /secciones/juegos/
+  descripcion: "Propuestas para jugar y participar con la audiencia."

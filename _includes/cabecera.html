@@ -1,0 +1,36 @@
+{% if site.aviso_prueba %}<p class="aviso-v0">Versión de prueba: el sitio está en construcción.</p>{% endif %}
+
+<header class="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="marca" href="{{ '/' | relative_url }}">
+      <img src="{{ '/img/logo.png' | relative_url }}" alt="" width="92" height="92">
+      <span class="marca__texto">
+        <span class="marca__nombre">{{ site.title }}</span>
+        <span class="marca__lema">{{ site.lema }}</span>
+      </span>
+    </a>
+    <div class="cabecera__lateral">
+      <time data-fecha-hoy></time>
+      <div class="redes">
+        {% if site.youtube != "" %}<a href="{{ site.youtube }}">YouTube</a>{% endif %}
+        {% if site.instagram != "" %}<a href="{{ site.instagram }}">Instagram</a>{% endif %}
+      </div>
+    </div>
+    <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+  </div>
+  <nav class="nav" id="menu-principal" aria-label="Navegación principal">
+    <div class="contenedor">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}"{% if page.nav == "inicio" %} aria-current="page"{% endif %}>Inicio</a></li>
+        {% for s in site.data.secciones %}
+        <li><a href="{{ s.url | relative_url }}"{% if page.nav == s.clave %} aria-current="page"{% endif %}>{{ s.nombre }}</a></li>
+        {% endfor %}
+        <li><a href="{{ '/quienes-somos/' | relative_url }}"{% if page.nav == "quienes" %} aria-current="page"{% endif %}>Quiénes somos</a></li>
+      </ul>
+      <div class="nav__redes redes">
+        {% if site.youtube != "" %}<a href="{{ site.youtube }}">YouTube</a>{% endif %}
+        {% if site.instagram != "" %}<a href="{{ site.instagram }}">Instagram</a>{% endif %}
+      </div>
+    </div>
+  </nav>
+</header>
