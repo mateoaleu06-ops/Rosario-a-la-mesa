@@ -29,7 +29,7 @@ permalink: /quienes-somos/
     <ul class="equipo grilla-4">
       {% for p in site.data.equipo %}
       <li>
-        {% if p.foto and p.foto != "" %}<img class="retrato" src="{{ '/img/equipo/' | append: p.foto | relative_url }}" alt="">{% else %}<div class="img-ph img-ph--retrato" aria-hidden="true"></div>{% endif %}
+        {% if p.foto and p.foto != "" %}<img class="retrato" src="{{ '/img/equipo/' | append: p.foto | relative_url }}" alt="Foto de {{ p.nombre }}" loading="lazy">{% else %}<div class="img-ph img-ph--retrato" aria-hidden="true"></div>{% endif %}
         <strong>{{ p.nombre }}</strong>
         {% if p.rol and p.rol != "" %}<span>{{ p.rol }}</span>{% endif %}
       </li>
