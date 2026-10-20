@@ -8,6 +8,7 @@
       <h2>Secciones</h2>
       <ul>
         {% for s in site.data.secciones %}<li><a href="{{ s.url | relative_url }}">{{ s.nombre }}</a></li>{% endfor %}
+        <li><a href="{{ '/videos/' | relative_url }}">Videos</a></li>
         <li><a href="{{ '/quienes-somos/' | relative_url }}">Quiénes somos</a></li>
       </ul>
     </div>

@@ -46,49 +46,44 @@ nav: inicio
 </section>
 {% endif %}
 
-{% if con_video.size > 0 or verticales.size > 0 or site.modo_prueba %}
+{%- assign videos_mira = site.data.videos | where: "seccion", "mira" | sort: "fecha" | reverse -%}
+{% if con_video.size > 0 or videos_mira.size > 0 %}
 {%- assign av = con_video.first -%}
 <section class="banda-av" aria-labelledby="t-av">
   <div class="contenedor bloque">
     <div class="bloque__cabeza">
       <h2 class="bloque__titulo" id="t-av">Mirá y escuchá</h2>
-      {% if site.youtube != "" %}<a class="bloque__mas" href="{{ site.youtube }}">Canal de YouTube →</a>{% elsif site.modo_prueba %}<a class="bloque__mas" href="#">Canal de YouTube →</a>{% endif %}
+      <a class="bloque__mas" href="{{ '/videos/' | relative_url }}">Todos los videos →</a>
     </div>
-    <div class="av-grilla{% unless site.modo_prueba %}{% if av == nil or verticales.size == 0 %} av-grilla--una{% endif %}{% endunless %}">
+    <div class="av-grilla av-grilla--reels">
       {% if av %}
       <article class="av-destacado">
         {% include video.html enlace=av.youtube titulo=av.titulo %}
         {% include kicker.html nota=av %}
         <h3><a href="{{ av.url | relative_url }}">{{ av.titulo }}</a></h3>
         {% if av.bajada %}<p>{{ av.bajada }}</p>{% endif %}
-        <p class="meta">{% include fecha.html fecha=av.fecha %}</p>
       </article>
-      {% elsif site.modo_prueba %}
-      <article class="av-destacado">
-        <div class="img-ph img-ph--video" aria-hidden="true">[VIDEO O EPISODIO DESTACADO]</div>
-        <p class="kicker"><span class="formato">Podcast</span><span class="formato">Video</span></p>
-        <h3>[TÍTULO DEL EPISODIO]</h3>
-        <p>[DESCRIPCIÓN BREVE DEL EPISODIO: lugar, invitados/as, tema]</p>
-        <p class="meta">[DURACIÓN] · [FECHA]</p>
-      </article>
+      {% else %}
+      {%- assign destacado = videos_mira.first -%}
+      <div class="av-reel">{% include video-red.html video=destacado %}</div>
       {% endif %}
-      {% if verticales.size > 0 or site.modo_prueba %}
       <div class="av-lateral">
-        <h3>Verticales</h3>
-        <div class="av-verticales">
-          {% for v in verticales limit: 3 %}
-          <a class="av-vertical" href="{{ v.url | relative_url }}">
-            {% include imagen.html nota=v clase="img-ph--vertical vertical" %}
-            <span>{{ v.titulo }}</span>
-          </a>
+        {% unless av %}
+        <p class="kicker"><span class="formato">Vertical</span></p>
+        <h3 class="av-reel__titulo">{{ destacado.titulo }}</h3>
+        <p>{{ destacado.descripcion }}</p>
+        {% endunless %}
+        <h3 class="av-mas">Más videos</h3>
+        <ul class="av-lista">
+          {% for v in videos_mira offset: 1 limit: 5 %}
+          <li><a href="{{ v.instagram | default: v.youtube }}">{{ v.titulo }}</a> <span class="meta">{% include fecha.html fecha=v.fecha corta=true %}</span></li>
           {% endfor %}
-          {% if site.modo_prueba %}{% assign faltan = 3 | minus: verticales.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}
-          <div class="av-vertical"><div class="img-ph vertical" aria-hidden="true">[VERTICAL]</div><span>[TÍTULO DEL VERTICAL]</span></div>
-          {% endfor %}{% endif %}{% endif %}
+        </ul>
+        <div class="botonera">
+          <a class="boton" href="{{ '/videos/' | relative_url }}">Ver todos</a>
+          {% if site.instagram != "" %}<a class="boton" href="{{ site.instagram }}">Seguinos en Instagram</a>{% endif %}
         </div>
-        {% if site.instagram != "" %}<a class="boton" href="{{ site.instagram }}">Ver más en Instagram</a>{% elsif site.modo_prueba %}<a class="boton" href="#">Ver más en Instagram</a>{% endif %}
       </div>
-      {% endif %}
     </div>
   </div>
 </section>

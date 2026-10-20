@@ -1,0 +1,62 @@
+# =========================================================
+#  VIDEOS Y REELS (Instagram o YouTube)
+#  Para agregar uno, copiá un bloque completo y completalo.
+#  - seccion: "juegos" → aparece en la sección Juegos
+#             "mira"   → aparece en "Mirá y escuchá" (portada) y en la página Videos
+#  - instagram: enlace del reel  |  youtube: enlace del video (usá uno de los dos)
+#  - fecha: año-mes-día (los más nuevos aparecen primero)
+# =========================================================
+
+- titulo: "Adiviná el valor del plato: Chinchibira Bar"
+  seccion: juegos
+  instagram: "https://www.instagram.com/reel/DeZwz7HpVwW/"
+  fecha: 2026-10-12
+  descripcion: "¿Quién estuvo más cerca del precio real? Algunos momentos de Adiviná el valor del plato en Chinchibira Bar."
+
+- titulo: "Cata de cookies en primera persona"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DesWcCYO5yp/"
+  fecha: 2026-10-19
+  descripcion: "Mateo Aleu se puso a prueba con una degustación: textura, bordes crujientes, centros húmedos y el punto exacto de dulzor."
+
+- titulo: "Mini debates del stream"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DesMbpwhkm-/"
+  fecha: 2026-10-19
+  descripcion: "Filosofando un rato en el stream: saltamos de tema en tema y terminamos en estos mini debates."
+
+- titulo: "La receta de las cookies de Mateo"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DesMXSpBpJB/"
+  fecha: 2026-10-19
+  descripcion: "Mateo compartió en el stream sus secretos para estas cookies."
+
+- titulo: "¿Dejar propina sí o no?"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DeZx4CDJ2kx/"
+  fecha: 2026-10-12
+  descripcion: "¿Es una obligación, un gesto de agradecimiento o una decisión personal? Debatimos una de las costumbres que más opiniones genera cuando salimos a comer."
+
+- titulo: "Una charla con Guido"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DeIJHcyBcY6/"
+  fecha: 2026-10-05
+  descripcion: "Los mejores momentos de esta entrevista especial."
+
+- titulo: "¿Mozo clásico o app en la mano?"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DeIIQH3BNSR/"
+  fecha: 2026-10-05
+  descripcion: "En el último stream se armó debate sobre cómo cambió el oficio de la atención en las mesas."
+
+- titulo: "La comida en los Juegos Suramericanos Santa Fe 2026"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DdzsweSuIwq/"
+  fecha: 2026-09-27
+  descripcion: "Benja recorrió la propuesta gastronómica de los Juegos Suramericanos: stands de comida y opciones para todos los gustos."
+
+- titulo: "¿Baños mixtos?"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/Ddzss19us67/"
+  fecha: 2026-09-27
+  descripcion: "En bares, cafeterías y restaurantes aparecen cada vez más baños mixtos. ¿Practicidad, inclusión o división tradicional?"

@@ -1,0 +1,18 @@
+{%- comment -%} Inserta un video de _data/videos.yml (reel de Instagram o video de YouTube). {%- endcomment -%}
+{%- assign v = include.video -%}
+<figure class="reel">
+  {% if v.youtube and v.youtube != "" %}
+    {% include video.html enlace=v.youtube titulo=v.titulo %}
+  {% else %}
+  <blockquote class="instagram-media" data-instgrm-permalink="{{ v.instagram }}" data-instgrm-version="14">
+    <a href="{{ v.instagram }}">Ver «{{ v.titulo }}» en Instagram</a>
+  </blockquote>
+  {% endif %}
+  {% if include.con_texto %}
+  <figcaption>
+    <strong class="reel__titulo">{{ v.titulo }}</strong>
+    {% if v.descripcion %}<span class="reel__desc">{{ v.descripcion }}</span>{% endif %}
+    <span class="meta">{% include fecha.html fecha=v.fecha %}</span>
+  </figcaption>
+  {% endif %}
+</figure>

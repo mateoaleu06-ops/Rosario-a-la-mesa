@@ -20,13 +20,19 @@ layout: base
   </header>
 
   <section class="bloque" aria-label="Notas de la sección">
-    {% if notas.size > 0 or site.modo_prueba %}
+    {%- assign videos_sec = site.data.videos | where: "seccion", page.seccion | sort: "fecha" | reverse -%}
+    {% if videos_sec.size > 0 %}
+    <div class="grilla-reels">
+      {% for v in videos_sec %}{% include video-red.html video=v con_texto=true %}{% endfor %}
+    </div>
+    {% endif %}
+    {% if notas.size > 0 or site.modo_prueba and videos_sec.size == 0 %}
     <div class="grilla-3">
       {% for n in notas %}{% include tarjeta.html nota=n nivel="h2" tipo=page.filtros %}{% endfor %}
       {% if site.modo_prueba %}{% assign faltan = 3 | minus: notas.size %}{% if faltan > 0 %}{% for i in (1..faltan) %}{% include tarjeta-ejemplo.html seccion=page.seccion nivel="h2" formato=page.formato_ejemplo %}{% endfor %}{% endif %}{% endif %}
     </div>
     <p class="filtros__vacio" hidden>Todavía no hay notas de este tipo.</p>
-    {% else %}
+    {% elsif videos_sec.size == 0 %}
     <p class="vacio">Todavía no hay notas publicadas en esta sección.</p>
     {% endif %}
   </section>

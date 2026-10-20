@@ -1,0 +1,17 @@
+---
+layout: base
+title: Videos
+permalink: /videos/
+---
+{%- assign videos = site.data.videos | where: "seccion", "mira" | sort: "fecha" | reverse -%}
+<div class="contenedor">
+  <header class="cabeza-seccion">
+    <h1>Videos</h1>
+    <p>Reels, debates y momentos del stream de Rosario a la mesa.{% if site.instagram != "" %} Hay más en nuestro <a href="{{ site.instagram }}">Instagram</a>.{% endif %}</p>
+  </header>
+  <section class="bloque" aria-label="Videos">
+    <div class="grilla-reels">
+      {% for v in videos %}{% include video-red.html video=v con_texto=true %}{% endfor %}
+    </div>
+  </section>
+</div>
