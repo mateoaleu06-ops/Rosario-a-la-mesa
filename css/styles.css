@@ -567,3 +567,7 @@ span.ultimas__titulo { font-weight: 700; font-size: 1.05rem; }
 .av-lista a { font-weight: 600; text-decoration: none; }
 .av-lista a:hover { text-decoration: underline; }
 @media (max-width: 960px) { .av-grilla--reels { grid-template-columns: minmax(0, 1fr); } .av-reel { max-width: 400px; } }
+
+/* Episodios del programa (YouTube) */
+.grilla-episodios { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 2rem; }
+.episodio { margin: 0; display: flex; flex-direction: column; gap: .6rem; min-width: 0; }

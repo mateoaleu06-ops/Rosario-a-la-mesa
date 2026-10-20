@@ -47,7 +47,46 @@ nav: inicio
 {% endif %}
 
 {%- assign videos_mira = site.data.videos | where: "seccion", "mira" | sort: "fecha" | reverse -%}
-{% if con_video.size > 0 or videos_mira.size > 0 %}
+{%- assign episodios = site.data.videos | where: "seccion", "episodios" | sort: "numero" | reverse -%}
+{% if episodios.size > 0 %}
+{%- assign ep = episodios.first -%}
+<section class="banda-av" aria-labelledby="t-av">
+  <div class="contenedor bloque">
+    <div class="bloque__cabeza">
+      <h2 class="bloque__titulo" id="t-av">Mirá y escuchá</h2>
+      <a class="bloque__mas" href="{{ '/videos/' | relative_url }}">Todos los videos →</a>
+    </div>
+    <div class="av-grilla">
+      <article class="av-destacado">
+        {% include video.html enlace=ep.youtube titulo=ep.titulo %}
+        <p class="kicker"><span class="formato">Programa</span><span class="formato">Último episodio</span></p>
+        <h3>{{ ep.titulo }}</h3>
+        {% if ep.descripcion %}<p>{{ ep.descripcion }}</p>{% endif %}
+      </article>
+      <div class="av-lateral">
+        <h3>Episodios anteriores</h3>
+        <ul class="av-lista">
+          {% for v in episodios offset: 1 limit: 4 %}
+          <li><a href="{{ v.youtube }}">{{ v.titulo }}</a></li>
+          {% endfor %}
+        </ul>
+        {% if videos_mira.size > 0 %}
+        <h3 class="av-mas">Reels</h3>
+        <ul class="av-lista">
+          {% for v in videos_mira limit: 3 %}
+          <li><a href="{{ v.instagram | default: v.youtube }}">{{ v.titulo }}</a> <span class="meta">{% include fecha.html fecha=v.fecha corta=true %}</span></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="botonera">
+          <a class="boton" href="{{ '/videos/' | relative_url }}">Ver todos</a>
+          {% if site.youtube != "" %}<a class="boton" href="{{ site.youtube }}">Canal de YouTube</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% elsif con_video.size > 0 or videos_mira.size > 0 %}
 {%- assign av = con_video.first -%}
 <section class="banda-av" aria-labelledby="t-av">
   <div class="contenedor bloque">

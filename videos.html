@@ -4,12 +4,33 @@ title: Videos
 permalink: /videos/
 ---
 {%- assign videos = site.data.videos | where: "seccion", "mira" | sort: "fecha" | reverse -%}
+{%- assign episodios = site.data.videos | where: "seccion", "episodios" | sort: "numero" | reverse -%}
 <div class="contenedor">
   <header class="cabeza-seccion">
     <h1>Videos</h1>
-    <p>Reels, debates y momentos del stream de Rosario a la mesa.{% if site.instagram != "" %} Hay más en nuestro <a href="{{ site.instagram }}">Instagram</a>.{% endif %}</p>
+    <p>Los episodios del programa, reels, debates y momentos del stream de Rosario a la mesa.{% if site.instagram != "" %} Hay más en nuestro <a href="{{ site.instagram }}">Instagram</a>.{% endif %}</p>
   </header>
-  <section class="bloque" aria-label="Videos">
+  {% if episodios.size > 0 %}
+  <section class="bloque" aria-labelledby="t-episodios">
+    <div class="bloque__cabeza">
+      <h2 class="bloque__titulo" id="t-episodios">Episodios del programa</h2>
+      {% if site.youtube != "" %}<a class="bloque__mas" href="{{ site.youtube }}">Canal de YouTube →</a>{% endif %}
+    </div>
+    <div class="grilla-episodios">
+      {% for v in episodios %}
+      <figure class="episodio">
+        {% include video.html enlace=v.youtube titulo=v.titulo %}
+        <figcaption class="reel__titulo">{{ v.titulo }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  <section class="bloque" aria-labelledby="t-reels">
+    <div class="bloque__cabeza">
+      <h2 class="bloque__titulo" id="t-reels">Reels</h2>
+      {% if site.instagram != "" %}<a class="bloque__mas" href="{{ site.instagram }}">Instagram →</a>{% endif %}
+    </div>
     <div class="grilla-reels">
       {% for v in videos %}{% include video-red.html video=v con_texto=true %}{% endfor %}
     </div>

@@ -1,11 +1,76 @@
 # =========================================================
 #  VIDEOS Y REELS (Instagram o YouTube)
 #  Para agregar uno, copiá un bloque completo y completalo.
-#  - seccion: "juegos" → aparece en la sección Juegos
-#             "mira"   → aparece en "Mirá y escuchá" (portada) y en la página Videos
+#  - seccion: "episodios" → capítulos del programa (YouTube). Usá "numero" para ordenarlos.
+#             "juegos"    → aparece en la sección Juegos
+#             "mira"      → reels: aparecen en "Mirá y escuchá" (portada) y en la página Videos
 #  - instagram: enlace del reel  |  youtube: enlace del video (usá uno de los dos)
 #  - fecha: año-mes-día (los más nuevos aparecen primero)
 # =========================================================
+
+# ---------- EPISODIOS DEL PROGRAMA (YouTube) ----------
+
+- titulo: "Capítulo #10 Rosario a la Mesa"
+  seccion: episodios
+  numero: 10
+  youtube: "https://www.youtube.com/watch?v=EktoZPoA-wU"
+  fecha: 2026-10-20
+
+- titulo: "Capítulo #9 de Rosario a la Mesa"
+  seccion: episodios
+  numero: 9
+  youtube: "https://www.youtube.com/watch?v=XWfhWpB_jTQ"
+  fecha: 2026-10-20
+
+- titulo: "Capítulo #8 Rosario a la Mesa"
+  seccion: episodios
+  numero: 8
+  youtube: "https://www.youtube.com/watch?v=uP5wFmUxc2o"
+  fecha: 2026-10-20
+
+- titulo: "Capitulo #7 Rosario a la Mesa"
+  seccion: episodios
+  numero: 7
+  youtube: "https://www.youtube.com/watch?v=E-htbVXRf2c"
+  fecha: 2026-10-20
+
+- titulo: "Capítulo #6 Rosario a la Mesa"
+  seccion: episodios
+  numero: 6
+  youtube: "https://www.youtube.com/watch?v=NQ3HxYBuci8"
+  fecha: 2026-10-20
+
+- titulo: "Capitulo #5 Rosario a la Mesa"
+  seccion: episodios
+  numero: 5
+  youtube: "https://www.youtube.com/watch?v=mWvNo-7CQ3I"
+  fecha: 2026-10-20
+
+- titulo: "Capítulo #4 Rosario a la Mesa"
+  seccion: episodios
+  numero: 4
+  youtube: "https://www.youtube.com/watch?v=qnNmDbUS5Gg"
+  fecha: 2026-10-20
+
+- titulo: "Capítulo #3 Rosario a la Mesa"
+  seccion: episodios
+  numero: 3
+  youtube: "https://www.youtube.com/watch?v=srZef4vuQ1Y"
+  fecha: 2026-10-20
+
+- titulo: "Capítulo #2 de Rosario a la Mesa"
+  seccion: episodios
+  numero: 2
+  youtube: "https://www.youtube.com/watch?v=61KZIhXzJzk"
+  fecha: 2026-10-20
+
+- titulo: "Primer episodio piloto Rosario a la Mesa"
+  seccion: episodios
+  numero: 0
+  youtube: "https://www.youtube.com/watch?v=RNO_bZPBzb0"
+  fecha: 2026-10-20
+
+# ---------- REELS DE INSTAGRAM ----------
 
 - titulo: "Adiviná el valor del plato: Chinchibira Bar"
   seccion: juegos
