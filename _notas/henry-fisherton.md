@@ -5,6 +5,8 @@ formato: Reseña
 tipo: Restaurantes
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 08:20:00 -0300
+imagen: "henry.jpg"
+imagen_alt: "Fachada azul del restaurante Henry, con el nombre en letras blancas sobre la vidriera"
 lugar:
   nombre: "Henry"
   direccion: "Eva Perón 8058"

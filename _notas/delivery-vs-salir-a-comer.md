@@ -4,6 +4,8 @@ seccion: entrevistas
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 10:00:00 -0300
+imagen: "delivery.jpg"
+imagen_alt: "Repartidor en bicicleta con una mochila roja de delivery cruzando una calle"
 ---
 
 Son las nueve de la noche de un jueves y el sonido más común en muchas casas rosarinas ya no es el chisporroteo de una sartén, sino el aviso de una notificación: "Tu pedido está en camino". La escena se repite tanto que casi borramos del vocabulario el "pidamos algo": directamente abrimos la app. Mientras tanto, la mesa de afuera —esa que exige vestirse, salir, esperar la carta y hacerle señas al mozo— quedó reservada para otra cosa. Dejó de ser el plan de cualquier noche para convertirse, cada vez más, en una ocasión especial.

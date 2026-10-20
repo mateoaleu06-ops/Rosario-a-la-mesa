@@ -6,6 +6,8 @@ formato: Nota
 tipo: Barrios
 autor: "Lola Cacheiro"
 fecha: 2026-10-19 11:20:00 -0300
+imagen: "pichincha.jpg"
+imagen_alt: "Mesas en la vereda de un bar de Pichincha de noche, llenas de gente, con luces cálidas"
 destacada: true
 fuentes:
   - "Registros de la Municipalidad de Rosario sobre locales con licencia en Pichincha"

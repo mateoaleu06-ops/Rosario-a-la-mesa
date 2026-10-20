@@ -5,6 +5,8 @@ seccion: entrevistas
 formato: Nota
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 11:30:00 -0300
+imagen: "higiene.jpg"
+imagen_alt: "Dos personas con guantes y barbijo limpiando la barra de un local gastronómico"
 fuentes:
   - "Instituto del Alimento, Municipalidad de Rosario"
 ---

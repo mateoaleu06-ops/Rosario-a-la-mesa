@@ -5,6 +5,8 @@ formato: Nota
 tipo: Guías
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 08:10:00 -0300
+imagen: "menu.jpg"
+imagen_alt: "Mozo escribiendo el menú del día en una pizarra en la vereda de un restaurante"
 ---
 
 Entrás a un restaurante a la hora del almuerzo, el mozo te acerca la carta y, casi al mismo tiempo, ves en una pizarra el menú del día. La duda es inmediata: ¿conviene lo fijo o lo libre? La respuesta depende menos del restaurante que de lo que necesitás en ese momento.

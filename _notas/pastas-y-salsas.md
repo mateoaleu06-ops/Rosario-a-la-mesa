@@ -5,6 +5,8 @@ formato: Nota
 tipo: Guías
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 10:10:00 -0300
+imagen: "pastas.jpg"
+imagen_alt: "Nidos de pasta fresca al huevo junto a un palo de amasar sobre una tabla de madera"
 ---
 
 En Argentina comemos pasta como si fuera propia: ñoquis el 29, tallarines con tuco el domingo, ravioles con amigos. Sin embargo, pocas veces nos hacemos una pregunta que en Italia es casi una regla de oro: ¿qué salsa le corresponde a cada pasta? No es un capricho de cocineros exigentes. La forma y la textura de la pasta determinan cuánta salsa retiene, y elegir bien la combinación puede cambiar por completo un plato.

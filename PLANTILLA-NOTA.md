@@ -23,6 +23,8 @@ actualidad: false               # true = muestra la etiqueta "Actualidad"
 imagen: "nombre-de-la-foto.jpg"
 imagen_alt: "Qué se ve en la foto (para personas que no pueden verla)"
 epigrafe: "Epígrafe de la foto. Foto: Nombre del fotógrafo/a"
+# Si en las tarjetas la foto se corta mal, elegí qué parte mostrar: "center top", "center bottom" o "center 70%"
+imagen_posicion: "center"
 
 # Video de YouTube (si la nota tiene video o es un episodio): pegá el enlace completo
 youtube: ""

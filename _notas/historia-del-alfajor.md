@@ -5,6 +5,8 @@ formato: Nota
 tipo: Guías
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 11:00:00 -0300
+imagen: "alfajor.jpg"
+imagen_alt: "Alfajor de chocolate partido al medio, con relleno de dulce de leche, sobre una mesa de madera"
 ---
 
 Pocas cosas son tan argentinas como un alfajor. Lo comemos en el recreo, lo compramos en el kiosco de la esquina, lo llevamos para la ruta y lo acompañamos con el mate de la tarde. Pero detrás de esta golosina cotidiana hay un viaje de más de mil años que empezó muy lejos de acá.

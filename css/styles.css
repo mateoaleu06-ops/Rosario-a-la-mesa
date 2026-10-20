@@ -540,3 +540,6 @@ span.ultimas__titulo { font-weight: 700; font-size: 1.05rem; }
 
 /* Bajadas largas en tarjetas: máximo 3 líneas */
 .tarjeta__bajada { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Dentro de la nota, la foto se ve completa (sin recorte), aunque sea vertical */
+.nota__foto .foto { aspect-ratio: auto; width: auto; max-width: 100%; max-height: 78vh; object-fit: contain; }

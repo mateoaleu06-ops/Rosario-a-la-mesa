@@ -5,6 +5,8 @@ formato: Reseña
 tipo: Restaurantes
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 09:20:00 -0300
+imagen: "jimmy.jpg"
+imagen_alt: "Esquina del bodegón Jimmy de noche, con fachada verde y guirnaldas de luces"
 lugar:
   nombre: "Jimmy"
   direccion: "Esquina de calle Pichincha (Ricchieri) y Brown"

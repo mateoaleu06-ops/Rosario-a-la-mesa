@@ -4,6 +4,8 @@ seccion: entrevistas
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 10:20:00 -0300
+imagen: "instagrameable.jpg"
+imagen_alt: "Persona sacándole una foto con el celular a un plato servido en la mesa"
 ---
 
 Hay comidas que antes de llegar a la mesa ya pasaron por otra pantalla. Un café con una presentación llamativa, una cookie de varios centímetros, una torta cubierta de colores, un brunch servido sobre una bandeja o un postre que se desarma frente al cliente pueden convertirse en contenido antes de ser probados. En Rosario, cada vez más propuestas gastronómicas comparten una característica: además de estar pensadas para comer, están diseñadas para ser fotografiadas.

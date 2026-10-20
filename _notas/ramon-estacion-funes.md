@@ -6,6 +6,9 @@ formato: Reseña
 tipo: Cafeterías
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 11:10:00 -0300
+imagen: "ramon.jpg"
+imagen_posicion: "center 85%"
+imagen_alt: "Cartel de Ramón sobre el césped de Estación Funes, frente a una fuente y al local"
 lugar:
   nombre: "Ramón"
   direccion: "Estación Funes, sobre ruta 9, esquina Galindo"

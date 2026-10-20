@@ -4,6 +4,8 @@ seccion: entrevistas
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 08:30:00 -0300
+imagen: "comer-sano.jpg"
+imagen_alt: "Cuencos con frutas, verduras, semillas y legumbres vistos desde arriba"
 ---
 
 Una ensalada, un bowl con frutas y granola o una vianda saludable suelen aparecer como opciones más cuidadas, pero también como alternativas más caras. Comer saludable suele asociarse con productos que, a primera vista, parecen más costosos: frutos secos, yogur, granola, panes integrales, semillas, frutas y verduras. Entonces aparece una pregunta cada vez más concreta: ¿para comer mejor hay que gastar más?

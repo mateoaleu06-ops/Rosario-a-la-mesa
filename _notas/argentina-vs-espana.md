@@ -4,6 +4,8 @@ seccion: entrevistas
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 08:00:00 -0300
+imagen: "arg-esp.jpg"
+imagen_alt: "Gráfica con las banderas de España y Argentina, una paella y un asado, bajo la pregunta ¿A cuál vas?"
 ---
 
 Compartimos idioma, apellidos y buena parte de la historia, pero alcanza con sentarse a la mesa para descubrir que Argentina y España hablan dos lenguas gastronómicas muy distintas. Hay parentescos, sin duda, aunque también diferencias que cuentan mucho de cada país.

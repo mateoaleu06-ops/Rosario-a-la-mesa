@@ -5,6 +5,8 @@ formato: Reseña
 tipo: Cafeterías
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 10:30:00 -0300
+imagen: "rufina.jpg"
+imagen_alt: "Bandeja de desayuno vista desde arriba: café con leche, jugo de naranja, medialunas y frutas"
 lugar:
   nombre: "Rufina"
   direccion: "Mendoza al 7900"

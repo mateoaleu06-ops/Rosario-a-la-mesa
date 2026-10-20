@@ -5,6 +5,8 @@ seccion: entrevistas
 formato: Debate
 autor: "Rosario a la mesa"
 fecha: 2026-10-19 09:30:00 -0300
+imagen: "bife.jpg"
+imagen_alt: "Bife cortado en capas que muestran los distintos puntos de cocción, de poco hecho a bien hecho"
 ---
 
 Pedir el bife "a punto rojo" divide a las mesas argentinas tanto como el asado con o sin sal. Para muchos amantes de la parrilla, es la única manera de apreciar la terneza y el sabor real de un buen corte. Para otros, genera desconfianza: ¿no es peligroso comer carne que por dentro sigue prácticamente cruda? La respuesta, según especialistas en seguridad alimentaria, depende de un factor clave que pocos tienen en cuenta: el tipo de corte.

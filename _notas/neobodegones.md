@@ -5,6 +5,8 @@ seccion: entrevistas
 formato: Debate
 autor: "Victoria Vaschetto"
 fecha: 2026-10-19 09:10:00 -0300
+imagen: "neobodegones.jpg"
+imagen_alt: "Plato de carne braseada con salsa sobre puré, servido en un restaurante"
 ---
 
 Una milanesa con papas, una tortilla, unos ravioles o una porción de flan pueden parecer platos conocidos. Pero cuando llegan a una mesa de madera en un local de estética cuidada, acompañados por una carta más acotada y pensados también para ser fotografiados, la escena cambia. La comida puede ser la misma. La experiencia, no tanto.
