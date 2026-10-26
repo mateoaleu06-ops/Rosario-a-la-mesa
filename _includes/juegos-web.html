@@ -1,0 +1,40 @@
+{%- comment -%} Juegos interactivos de la sección Juegos. Datos en _data/trivia.yml y _data/pastas_juego.yml {%- endcomment -%}
+<section class="bloque juegos-web" aria-labelledby="t-jugar">
+  <div class="bloque__cabeza">
+    <h2 class="bloque__titulo" id="t-jugar">Jugá en la web</h2>
+  </div>
+  <div class="juegos-grilla">
+
+    <!-- TRIVIA -->
+    <article class="juego" id="trivia" aria-labelledby="t-trivia">
+      <p class="kicker"><span class="formato">Trivia</span><span class="agenda">{{ site.data.trivia.size }} preguntas</span></p>
+      <h3 class="juego__titulo" id="t-trivia">¿Cuánto sabés de lo que comemos?</h3>
+      <p class="juego__intro">Preguntas sacadas de nuestras notas. Después de cada respuesta te contamos el dato y dónde leer más.</p>
+      <div class="juego__cuerpo" data-trivia>
+        <button type="button" class="boton boton--rojo" data-empezar>Empezar</button>
+        <noscript><p>Para jugar necesitás tener JavaScript activado.</p></noscript>
+      </div>
+    </article>
+
+    <!-- CADA PASTA CON SU SALSA -->
+    <article class="juego" id="pastas" aria-labelledby="t-pastas">
+      <p class="kicker"><span class="formato">Desafío</span><span class="agenda">{{ site.data.pastas_juego.size }} pastas</span></p>
+      <h3 class="juego__titulo" id="t-pastas">Cada pasta con su salsa</h3>
+      <p class="juego__intro">Elegí la salsa que mejor le va a cada pasta y tocá «Comprobar».</p>
+      <form class="juego__cuerpo pastas" data-pastas>
+        <ol class="pastas__lista"></ol>
+        <div class="botonera">
+          <button type="submit" class="boton boton--rojo">Comprobar</button>
+          <button type="button" class="boton" data-reiniciar hidden>Jugar de nuevo</button>
+        </div>
+        <p class="juego__resultado" aria-live="polite"></p>
+        <p class="juego__fuente">Fuente: <a href="{{ '/notas/pastas-y-salsas/' | relative_url }}">Cada pasta tiene su salsa</a></p>
+      </form>
+    </article>
+
+  </div>
+</section>
+
+<script type="application/json" id="datos-trivia">{"base": {{ '/notas/' | relative_url | jsonify }}, "notas": { {% for n in site.notas %}{{ n.slug | jsonify }}: {{ n.titulo | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} }, "preguntas": {{ site.data.trivia | jsonify }} }</script>
+<script type="application/json" id="datos-pastas">{{ site.data.pastas_juego | jsonify }}</script>
+<script src="{{ '/js/juegos.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

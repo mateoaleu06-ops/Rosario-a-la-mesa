@@ -19,9 +19,12 @@ layout: base
     {% endif %}
   </header>
 
+  {% if page.seccion == "juegos" %}{% include juegos-web.html %}{% endif %}
+
   <section class="bloque" aria-label="Notas de la sección">
     {%- assign videos_sec = site.data.videos | where: "seccion", page.seccion | sort: "fecha" | reverse -%}
     {% if videos_sec.size > 0 %}
+    {% if page.seccion == "juegos" %}<div class="bloque__cabeza"><h2 class="bloque__titulo">Adiviná el valor del plato</h2>{% if site.instagram != "" %}<a class="bloque__mas" href="{{ site.instagram }}">Más en Instagram →</a>{% endif %}</div>{% endif %}
     <div class="grilla-reels">
       {% for v in videos_sec %}{% include video-red.html video=v con_texto=true %}{% endfor %}
     </div>

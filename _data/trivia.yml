@@ -1,0 +1,68 @@
+# =========================================================
+#  TRIVIA GASTRONÓMICA (sección Juegos)
+#  Cada pregunta sale de una nota publicada.
+#  - correcta: el texto EXACTO de la opción correcta (tiene que estar en "opciones")
+#  - nota: nombre del archivo de la nota en _notas, sin el .md
+#  - dato: lo que se muestra después de responder
+#  Las opciones se mezclan solas en cada partida.
+# =========================================================
+
+- pregunta: "¿De qué idioma viene la palabra «alfajor»?"
+  opciones: ["Del árabe andalusí", "Del latín", "Del italiano", "Del guaraní"]
+  correcta: "Del árabe andalusí"
+  dato: "Llega del árabe andalusí: durante casi ocho siglos de presencia árabe en la península ibérica se popularizaron dulces con miel, almendras y especias."
+  nota: historia-del-alfajor
+
+- pregunta: "¿En qué ciudad abrió Merengo, considerada la primera fábrica de alfajores de la Argentina?"
+  opciones: ["Santa Fe", "Córdoba", "Mar del Plata", "Rosario"]
+  correcta: "Santa Fe"
+  dato: "Santa Fe suele señalarse como la cuna de la industria alfajorera del país. El santafesino lleva capas de masa crocante, dulce de leche y merengue."
+  nota: historia-del-alfajor
+
+- pregunta: "En Bolonia, ¿con qué pasta se sirve tradicionalmente el ragù alla bolognese?"
+  opciones: ["Tagliatelle", "Spaghetti", "Penne", "Ñoquis"]
+  correcta: "Tagliatelle"
+  dato: "Las cintas anchas al huevo tienen más superficie y textura para sostener una salsa de carne. Los spaghetti con boloñesa son una costumbre de fuera de Italia."
+  nota: pastas-y-salsas
+
+- pregunta: "¿Dónde nacieron los sorrentinos?"
+  opciones: ["En Mar del Plata", "En Sorrento, Italia", "En Rosario", "En Nápoles"]
+  correcta: "En Mar del Plata"
+  dato: "Aunque el nombre suene italiano, los sorrentinos nacieron en Mar del Plata."
+  nota: pastas-y-salsas
+
+- pregunta: "¿Qué es «mantecare»?"
+  opciones: ["Terminar la pasta en la sartén con la salsa y un chorrito del agua de cocción", "Agregarle manteca a la masa de la pasta", "Hervir la pasta en caldo en lugar de agua", "Servir la salsa aparte, sobre la mesa"]
+  correcta: "Terminar la pasta en la sartén con la salsa y un chorrito del agua de cocción"
+  dato: "El almidón del agua de cocción ayuda a ligar la salsa con la pasta, que queda cremosa en lugar de parecer dos cosas separadas en el plato."
+  nota: pastas-y-salsas
+
+- pregunta: "¿Cómo se dice «frutilla» en España?"
+  opciones: ["Fresa", "Mora", "Frambuesa", "Guinda"]
+  correcta: "Fresa"
+  dato: "Nuestra papa es su patata; la frutilla, fresa; el durazno, melocotón; la palta, aguacate y la manteca, mantequilla."
+  nota: argentina-vs-espana
+
+- pregunta: "¿En qué se diferencia el chorizo español del argentino?"
+  opciones: ["El español suele ser curado y con pimentón", "El español es fresco y va a la parrilla", "El español se hace con pollo", "No hay ninguna diferencia"]
+  correcta: "El español suele ser curado y con pimentón"
+  dato: "El español se come en rodajas o en guisos; el argentino es fresco, va a la parrilla y termina en el choripán."
+  nota: argentina-vs-espana
+
+- pregunta: "En un corte entero de carne, como un bife de chorizo, ¿dónde se concentran casi todas las bacterias?"
+  opciones: ["En la superficie", "En el centro", "En la grasa", "Se reparten por toda la pieza"]
+  correcta: "En la superficie"
+  dato: "Por eso, sellar bien el exterior a alta temperatura alcanza para que un bife jugoso por dentro no sea un riesgo sanitario."
+  nota: bife-jugoso
+
+- pregunta: "¿Qué carne conviene cocinar siempre bien, sin puntos rojos?"
+  opciones: ["La carne picada", "El lomo", "El ojo de bife", "El bife de chorizo"]
+  correcta: "La carne picada"
+  dato: "Al moler la carne, las bacterias de la superficie se mezclan con toda la masa. Por eso la hamburguesa poco cocida sí es un riesgo."
+  nota: bife-jugoso
+
+- pregunta: "Según los registros municipales, ¿cuántos locales con licencia hay en Pichincha?"
+  opciones: ["134", "70", "250", "48"]
+  correcta: "134"
+  dato: "En apenas 70 manzanas hay 110 bares y restaurantes y 24 espacios de nocturnidad."
+  nota: pichincha-de-noche

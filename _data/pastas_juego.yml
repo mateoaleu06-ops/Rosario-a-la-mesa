@@ -1,0 +1,25 @@
+# =========================================================
+#  JUEGO «CADA PASTA CON SU SALSA» (sección Juegos)
+#  Sale de la nota "Cada pasta tiene su salsa".
+#  Cada pasta tiene su salsa correcta; las salsas se mezclan solas.
+# =========================================================
+
+- pasta: "Spaghetti, linguine o cabellos de ángel"
+  tipo: "Largas y finas"
+  salsa: "Fluida o con aceite (aglio, olio e peperoncino)"
+  porque: "Tienen poca superficie para sostener ingredientes pesados: una salsa con trozos grandes termina en el fondo del plato."
+
+- pasta: "Tagliatelle o pappardelle"
+  tipo: "Largas y anchas"
+  salsa: "De carne y con cuerpo (ragú)"
+  porque: "Las cintas anchas al huevo tienen más superficie y una textura rugosa y porosa, ideal para salsas de carne."
+
+- pasta: "Rigatoni, penne rigate o fusilli"
+  tipo: "Cortas y con relieve"
+  salsa: "Abundante, con trozos o al horno"
+  porque: "Sus estrías, huecos y espirales atrapan verduras, carnes picadas y quesos."
+
+- pasta: "Ravioles, sorrentinos o ñoquis"
+  tipo: "Rellenas y ñoquis"
+  salsa: "Liviana: manteca, crema o fileto"
+  porque: "Cuando la pasta ya aporta sabor o una textura delicada, conviene no taparla."
