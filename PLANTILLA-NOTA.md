@@ -14,7 +14,7 @@ bajada: "Una o dos oraciones que amplían el título."
 seccion: recomendaciones        # recomendaciones | sobremesa | juegos
 formato: Nota                   # Nota | Reseña | Entrevista | Debate | Podcast | Video | Vertical | Juego
 tipo: Cafeterías                # Solo para recomendaciones: Restaurantes | Bares | Cafeterías | Según presupuesto | Barrios | Virales
-autor: "Nombre Apellido"
+autor: "Rosario a la mesa"
 fecha: 2026-10-19               # año-mes-día. Las notas se ordenan por esta fecha.
 destacada: false                # true = va como nota principal de la portada
 actualidad: false               # true = muestra la etiqueta "Actualidad"
