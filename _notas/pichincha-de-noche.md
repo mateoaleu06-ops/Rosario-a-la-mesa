@@ -4,7 +4,7 @@ bajada: "Con más de un centenar de propuestas en pocas manzanas, el polo gastro
 seccion: recomendaciones
 formato: Nota
 tipo: Barrios
-autor: "Lola Cacheiro"
+autor: "Rosario a la mesa"
 fecha: 2026-10-19 11:20:00 -0300
 imagen: "pichincha.jpg"
 imagen_alt: "Mesas en la vereda de un bar de Pichincha de noche, llenas de gente, con luces cálidas"

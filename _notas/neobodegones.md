@@ -3,7 +3,7 @@ titulo: "Neobodegones: la tradición se reinventa"
 bajada: "La cocina tradicional vuelve a ocupar un lugar central en la gastronomía rosarina, pero con nuevos códigos: locales más modernos, cartas más breves, platos clásicos reinterpretados y una generación que busca comer como antes, aunque de otra manera."
 seccion: sobremesa
 formato: Debate
-autor: "Victoria Vaschetto"
+autor: "Rosario a la mesa"
 fecha: 2026-10-19 09:10:00 -0300
 imagen: "neobodegones.jpg"
 imagen_alt: "Plato de carne braseada con salsa sobre puré, servido en un restaurante"
