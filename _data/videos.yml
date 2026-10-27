@@ -10,6 +10,12 @@
 
 # ---------- EPISODIOS DEL PROGRAMA (YouTube) ----------
 
+- titulo: "Capítulo #11 Rosario a la Mesa"
+  seccion: episodios
+  numero: 11
+  youtube: "https://www.youtube.com/watch?v=_Ic84HbrDes"
+  fecha: 2026-10-26
+
 - titulo: "Capítulo #10 Rosario a la Mesa"
   seccion: episodios
   numero: 10
@@ -71,6 +77,18 @@
   fecha: 2026-10-20
 
 # ---------- REELS DE INSTAGRAM ----------
+
+- titulo: "Trivia gastronómica por el Día del Chef"
+  seccion: juegos
+  instagram: "https://www.instagram.com/reel/De-f2RjOSNH/"
+  fecha: 2026-10-26
+  descripcion: "Para festejar el Día del Chef, Mateo nos puso a prueba con una trivia gastronómica. ¿Quién sabe más entre hornallas y sartenes?"
+
+- titulo: "Colectividades: culturas, sabores y tradiciones"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/De-M7ZUhpmr/"
+  fecha: 2026-10-26
+  descripcion: "Las Colectividades son mucho más que una fiesta: historias, raíces y costumbres de distintos rincones del mundo que se encuentran en Rosario."
 
 - titulo: "Adiviná el valor del plato: Chinchibira Bar"
   seccion: juegos
