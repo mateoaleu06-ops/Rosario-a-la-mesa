@@ -5,6 +5,9 @@ seccion: sobremesa
 formato: Entrevista
 autor: "Rosario a la mesa"
 fecha: 2026-10-26 11:00:00 -0300
+imagen: "florencia.jpg"
+imagen_posicion: "center 35%"
+imagen_alt: "Florencia Morán, sonriente y con trenzas, frente a un naranjo con frutos"
 ---
 
 Florencia Morán creció fascinada por la magia de la televisión. Mientras en la pantalla se sucedían las recetas de Utilísima y El Gourmet, en la cocina de su casa el aroma de los platos elaborados por su madre perfumaba el aire. Para ella, cocinar era un juego de niños, una fantasía inocente que, con el paso de los años, terminó convirtiéndose en su verdadera vocación. Estudió gastronomía en Buenos Aires, esa ciudad que la cautivaba desde chica en cada visita familiar y que eligió como su primera gran escuela casi por instinto.
