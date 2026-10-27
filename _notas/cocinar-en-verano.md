@@ -6,6 +6,8 @@ formato: Nota
 tipo: Guías
 autor: "Rosario a la mesa"
 fecha: 2026-10-26 12:00:00 -0300
+imagen: "verano.jpg"
+imagen_alt: "Ensalada fría de pasta con pollo grillado, tomates cherry, morrón, cebolla morada, queso y albahaca"
 ---
 
 Noviembre está a la vuelta de la esquina y en Rosario ya lo sabemos: el calor no avisa, se instala. Esa humedad que sube del Paraná y vuelve espeso el aire de la siesta también cambia el apetito. Los guisos y el horno prendido toda la tarde quedan guardados hasta mayo; ahora la mesa pide platos frescos, livianos y rápidos. Esta semana repasamos cómo adaptar la cocina al verano sin resignar sabor.

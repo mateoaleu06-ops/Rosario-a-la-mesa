@@ -5,6 +5,9 @@ seccion: sobremesa
 formato: Nota
 autor: "Rosario a la mesa"
 fecha: 2026-10-26 10:00:00 -0300
+imagen: "vermu.jpg"
+imagen_posicion: "center 55%"
+imagen_alt: "Botella de vermú rosso sobre un mantel a cuadros rojo y blanco, junto a un vaso con hielo y pomelo y un sifón de soda azul"
 ---
 
 Hay bebidas que no se explican solamente por su sabor, sino también por los momentos que acompañan. Durante décadas, el vermú estuvo ligado a las mesas familiares, las picadas y las charlas de bar. Hoy, esa tradición encuentra nuevas formas de expresión y Rosario tiene sus propios protagonistas.
