@@ -10,6 +10,12 @@
 
 # ---------- EPISODIOS DEL PROGRAMA (YouTube) ----------
 
+- titulo: "Capítulo #12 Rosario a la Mesa"
+  seccion: episodios
+  numero: 12
+  youtube: "https://www.youtube.com/watch?v=a8qshswoyYM"
+  fecha: 2026-11-01
+
 - titulo: "Capítulo #11 Rosario a la Mesa"
   seccion: episodios
   numero: 11
@@ -77,6 +83,24 @@
   fecha: 2026-10-20
 
 # ---------- REELS DE INSTAGRAM ----------
+
+- titulo: "El pasaporte de Boccâos"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DfQRsSUNckh/"
+  fecha: 2026-11-02
+  descripcion: "Después de lo que nos contó Rodrigo en el stream: el nuevo método del pasaporte de Boccâos, una excusa para pasar por el local y vivir la experiencia completa."
+
+- titulo: "Un consejo para emprender en gastronomía"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DfPfPhdRa-P/"
+  fecha: 2026-11-02
+  descripcion: "Le pedimos a Rodrigo, de Boccâos, un consejo para quienes quieren arrancar su propio emprendimiento gastronómico. Una respuesta sincera y al pie."
+
+- titulo: "Sándwiches de autor: charla con Rodrigo de Boccâos"
+  seccion: mira
+  instagram: "https://www.instagram.com/reel/DfF_aYbBmwd/"
+  fecha: 2026-10-29
+  descripcion: "En el stream charlamos con Rodrigo, dueño de Boccâos, para conocer su propuesta y todo lo que hay detrás de cada sándwich."
 
 - titulo: "Trivia gastronómica por el Día del Chef"
   seccion: juegos
