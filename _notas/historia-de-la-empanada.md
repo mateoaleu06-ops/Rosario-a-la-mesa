@@ -5,6 +5,8 @@ formato: Nota
 tipo: Guías
 autor: "Rosario a la mesa"
 fecha: 2026-11-03 11:00:00 -0300
+imagen: "empanada.jpg"
+imagen_alt: "Fuente con empanadas al horno con repulgue, junto a cuencos de salsas"
 ---
 
 En Argentina, la empanada no se explica: se pide. Aparece en el cumpleaños, en la peña, en la previa del clásico y en esa docena salvadora del domingo a la noche, cuando en casa nadie quiere prender la hornalla. La sentimos tan nuestra que cuesta creerlo, pero antes de llegar a la mesa criolla esta masa rellena recorrió miles de kilómetros y muchos siglos.

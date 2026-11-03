@@ -7,6 +7,8 @@ tipo: Heladerías
 actualidad: true
 autor: "Rosario a la mesa"
 fecha: 2026-11-03 10:00:00 -0300
+imagen: "luccianos.jpg"
+imagen_alt: "Esquina del local de Lucciano's en Pichincha al atardecer, con la terraza iluminada en la planta alta"
 lugar:
   nombre: "Lucciano's"
   direccion: "Bulevar Oroño y Jujuy"

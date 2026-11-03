@@ -5,6 +5,8 @@ seccion: sobremesa
 formato: Nota
 autor: "Rosario a la mesa"
 fecha: 2026-11-03 12:00:00 -0300
+imagen: "alimentos.jpg"
+imagen_alt: "Cocineros trabajando en la cocina de un restaurante, con ollas y sartenes en el fuego"
 fuentes:
   - "Banco de Alimentos Rosario"
   - "Municipalidad de Rosario, campaña «Los alimentos no se tiran»"

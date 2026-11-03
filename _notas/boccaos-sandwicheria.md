@@ -6,6 +6,9 @@ formato: Reseña
 tipo: Restaurantes
 autor: "Rosario a la mesa"
 fecha: 2026-11-03 09:00:00 -0300
+imagen: "boccaos.jpg"
+imagen_posicion: "center 30%"
+imagen_alt: "Fachada azul de Boccâos con el cartel del local y la vidriera, a través de la que se ve la barra y la cocina"
 instagram: "https://www.instagram.com/reel/DfF_aYbBmwd/"
 lugar:
   nombre: "Boccâos"
